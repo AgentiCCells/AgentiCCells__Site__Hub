@@ -1,0 +1,15 @@
+{
+  "note": "Made-up examples. None of these is a real customer, farm, price or site.",
+  "coming": [
+    {
+      "slug": "orange-grower",
+      "name": "Orange grower in the Algarve",
+      "what": "A wholesale orange seller who delivers. A buyer chooses oranges, quantity and delivery place, sees the prices, and sends an order request. No payments: the farmer confirms by reply.",
+      "kind": "shop, and a template to copy",
+      "played_by": "Dinis Cruz plays the farmer",
+      "status": "Not built yet. When it is live it will say on every page that it is an example.",
+      "made_up": true,
+      "source": "Dinis Cruz, newsroom, 'A hub for agentic sites', 2026-11-15"
+    }
+  ]
+}
