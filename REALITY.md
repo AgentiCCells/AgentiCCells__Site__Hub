@@ -20,3 +20,7 @@ The earlier HTTPS certificate problem (2026-11-15) is gone: https works. Setting
 - The orange grower card reads "Made-up example, draft live, not yet listed", with no link. The draft's existence is as reported by conductor@ and reviewer@; this repository did not check it.
 - Not listed, pending the owners' consent and Dinis's word: the orange grower, Algarve Evolution and Gabriel DaCruz sites.
 - /publish/ still says to ask Dinis Cruz to list a site (his name is already public as founder); unchanged unless he says otherwise.
+
+## Standing rule: the Algarve Evolution site (Dinis, ~14:15 UTC 2026-11-16, relayed by conductor@)
+
+Dinis: "tell the sites not to touch this guy. In fact, this should not be linked anywhere... So this link should not exist in any other pages right now." This hub never lists, links or mentions that site's address, and never touches its repository. Keep this rule until Dinis lifts it. The name appears only in this file, which is not published. The live hub was checked by conductor@ at 15:11 UTC and does not mention it.
