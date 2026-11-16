@@ -14,3 +14,9 @@ A thing not written here does not exist.
 ## Deployment
 
 The earlier HTTPS certificate problem (2026-11-15) is gone: https works. Settings stay with Dinis: Pages source GitHub Actions, custom domain hub.agenticcells.site, and the github-pages environment allowing dev. This session changed none of them.
+
+## Listing (2026-11-16)
+
+- The orange grower card reads "Made-up example, draft live, not yet listed", with no link. The draft's existence is as reported by conductor@ and reviewer@; this repository did not check it.
+- Not listed, pending the owners' consent and Dinis's word: the orange grower, Algarve Evolution and Gabriel DaCruz sites.
+- /publish/ still says to ask Dinis Cruz to list a site (his name is already public as founder); unchanged unless he says otherwise.

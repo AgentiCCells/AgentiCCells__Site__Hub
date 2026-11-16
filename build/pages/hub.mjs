@@ -26,7 +26,8 @@ export default async function (ctx) {
       versions[h.version_from] = typeof v === 'string' && /^v?\d+\.\d+\.\d+$/.test(v) ? v : null;
     } catch { versions[h.version_from] = null; }
   }
-  const versionText = (h) => versions[h.version_from] ? `${versions[h.version_from]} (read from its version.json when this page was built)` : 'Not readable when this page was built';
+  const readOn = new Date().toISOString().slice(0, 10);
+  const versionText = (h) => versions[h.version_from] ? `${versions[h.version_from]} (read on ${readOn}, when this page was built; the live site may have moved on)` : 'Not readable when this page was built';
 
   const link = (u) => `<a href="${esc(u)}">${esc(u)}</a>`;
 

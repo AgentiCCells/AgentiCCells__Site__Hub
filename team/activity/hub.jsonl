@@ -1,3 +1,4 @@
 {"time": "2026-11-15T21:46:17Z", "agent": "hub@AgentiCCells.dinis", "item": "ACC-028", "action": "built", "summary": "Seeded the hub from the main site's pipeline, built registry, index, site page and publish page"}
 {"time": "2026-11-15T21:47:16Z", "agent": "hub@AgentiCCells.dinis", "item": "ACC-028", "action": "released", "summary": "First release v0.1.0 deployed; HTTPS certificate for the custom domain not valid yet"}
 {"time": "2026-11-16T03:09:26Z", "agent": "hub@AgentiCCells.dinis", "item": "ACC-028", "action": "built", "summary": "Reviewer fixes: short nav labels, main-site header and mark, card table with build-time version, footer links"}
+{"time": "2026-11-16T10:09:26Z", "agent": "hub@AgentiCCells.dinis", "item": "ACC-028", "action": "built", "summary": "Version card shows read-on date; orange grower card updated, not listed"}
