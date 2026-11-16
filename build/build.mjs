@@ -59,12 +59,15 @@ function markdown(body) {
 
 // The site nav: every page with a `nav:` number in its front matter (or returned
 // by a page hook), in that number's order. Pages without one stay out of the nav.
+const MARK = '<svg class="mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><path d="M17 6.5A10.5 10.5 0 1 0 17 25.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" opacity=".45"/><path d="M25 9.5A10.5 10.5 0 1 0 25 22.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/></svg>';
+// Every nav page is a primary link, labelled by `navlabel` (front matter or hook) or else its title.
+function navList(items, current) {
+  return items.map((n) => `<li><a href="${esc(n.url)}"${n.url === current ? ' aria-current="page"' : ''}>${esc(n.label || n.title)}</a></li>`).join('');
+}
 function navHtml(nav, current) {
   if (!nav.length) return '';
-  const items = nav.map((n) => n.url === current
-    ? `<li><a href="${esc(n.url)}" aria-current="page">${esc(n.title)}</a></li>`
-    : `<li><a href="${esc(n.url)}">${esc(n.title)}</a></li>`).join('');
-  return `<nav aria-label="Site"><ul>${items}</ul></nav>`;
+  const items = navList(nav, current);
+  return `<nav class="wide" aria-label="Site"><ul>${items}</ul></nav><details class="menu"><summary>Menu</summary><nav aria-label="Site (menu)"><ul>${items}</ul></nav></details>`;
 }
 
 function page(meta, content, nav = [], current = '') {
@@ -84,11 +87,11 @@ ${meta.noindex ? '<meta name="robots" content="noindex">\n' : ''}${origin && !me
 ${origin ? `<meta property="og:url" content="${esc(origin + current)}">\n` : ''}<meta name="twitter:card" content="summary">
 </head>
 <body>
-<header><a class="brand" href="/">AgentiCCells hub</a>${navHtml(nav, current)}</header>
+<header><a class="brand" href="/">${MARK}<span>AgentiCCells hub</span></a>${navHtml(nav, current)}</header>
 <main>
 ${content}
 </main>
-<footer><p>Contact: <a href="mailto:${contact}">${contact}</a></p><p>Code under Apache-2.0. Text and images under CC BY 4.0.</p><p class="version">Version ${esc(version)}</p></footer>
+<footer><p>Contact: <a href="mailto:${contact}">${contact}</a></p><p>Code under Apache-2.0. Text and images under CC BY 4.0.</p><p>Also from AgentiCCells: <a href="https://agenticcells.ai">agenticcells.ai</a> and <a href="https://agenticcells.site">agenticcells.site</a>.</p><p class="version">Version ${esc(version)}</p></footer>
 </body>
 </html>
 `;
@@ -115,7 +118,7 @@ const pages = [];
 for (const f of readdirSync(join(root, 'content')).filter((f) => f.endsWith('.md')).sort()) {
   const { meta, body } = frontMatter(readFileSync(join(root, 'content', f), 'utf8'));
   const path = f === 'index.md' ? '/' : `/${f.replace(/\.md$/, '')}/`;
-  pages.push({ path, title: meta.title, description: meta.description, nav: meta.nav, html: markdown(body), source: `content/${f}` });
+  pages.push({ path, title: meta.title, description: meta.description, nav: meta.nav, navlabel: meta.navlabel, html: markdown(body), source: `content/${f}` });
 }
 
 // Page hooks: build/pages/*.mjs, each `export default async function (ctx)` returning
@@ -148,7 +151,7 @@ for (const p of pages) {
 const nav = pages
   .filter((p) => p.nav !== undefined && p.nav !== '' && Number.isFinite(Number(p.nav)))
   .sort((a, b) => Number(a.nav) - Number(b.nav) || String(a.title).localeCompare(String(b.title)))
-  .map((p) => ({ url: urlFor(p.file), title: p.title }));
+  .map((p) => ({ url: urlFor(p.file), title: p.title, label: p.navlabel }));
 
 // 404 page (GitHub Pages serves site/404.html for unknown paths). Not indexed, not in the nav.
 if (!seen.has('404.html')) pages.push({

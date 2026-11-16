@@ -17,10 +17,21 @@ export default async function (ctx) {
   });
   const { coming } = JSON.parse(readFileSync(join(root, 'data/coming.json'), 'utf8'));
 
+  // The version is read from each site's own version.json at build time; if it cannot be read, the page says so.
+  const versions = {};
+  for (const { h } of sites) {
+    try {
+      const r = await fetch(h.version_from, { signal: AbortSignal.timeout(15000) });
+      const v = r.ok ? (await r.json()).version : null;
+      versions[h.version_from] = typeof v === 'string' && /^v?\d+\.\d+\.\d+$/.test(v) ? v : null;
+    } catch { versions[h.version_from] = null; }
+  }
+  const versionText = (h) => versions[h.version_from] ? `${versions[h.version_from]} (read from its version.json when this page was built)` : 'Not readable when this page was built';
+
   const link = (u) => `<a href="${esc(u)}">${esc(u)}</a>`;
 
   const cards = sites.map(({ h, path }) =>
-    `<li class="site-card"><h3><a href="${esc(path)}">${esc(h.name)}</a></h3><p>${esc(h.what_it_does)}</p><p><small>Owner: ${esc(h.owner)} · Live: ${link(h.live_address)}</small></p></li>`).join('\n');
+    `<li class="site-card"><h3><a href="${esc(path)}">${esc(h.name)}</a></h3><p>${esc(h.what_it_does)}</p><table><tbody><tr><th scope="row">Address</th><td>${link(h.live_address)}</td></tr><tr><th scope="row">Licence</th><td>Code ${esc(h.licence.code)}, text ${esc(h.licence.text)}</td></tr><tr><th scope="row">Version</th><td>${esc(versionText(h))}</td></tr></tbody></table></li>`).join('\n');
 
   const comingCards = coming.map((c) =>
     `<li class="site-card coming"><h3>${esc(c.name)} <span class="tag">Coming. Made-up example</span></h3><p>${esc(c.what)}</p><p><small>Kind: ${esc(c.kind)} · ${esc(c.played_by)} · ${esc(c.status)}</small></p></li>`).join('\n');
@@ -30,6 +41,7 @@ export default async function (ctx) {
     title: 'AgentiCCells hub: agentic sites you can find and copy',
     description: 'A list of agentic websites, each with its owner, team, live address, repository and licence, and a guide to publishing a site here or copying one.',
     nav: 1,
+    navlabel: 'Sites',
     html: `<h1>Agentic sites, listed by consent</h1>
 <p>A hub for small websites built by agentic teams. Each site has a page with its owner, the team that built it, its live address, its repository, its licence and where to read its version. Sites are listed only if their owner agrees. <a href="/publish/">How to publish a site here, and how to copy one.</a></p>
 <h2>Listed now</h2>
@@ -61,7 +73,7 @@ ${comingCards}
 <tr><th scope="row">Repository</th><td>${link(h.repository)}</td></tr>
 <tr><th scope="row">Vault</th><td>${esc(vault)}</td></tr>
 <tr><th scope="row">Licence</th><td>Code: ${esc(h.licence.code)}. Text: ${esc(h.licence.text)}.</td></tr>
-<tr><th scope="row">Version</th><td>Read it at ${link(h.version_from)}</td></tr>
+<tr><th scope="row">Version</th><td>${esc(versionText(h))}. Source: ${link(h.version_from)}</td></tr>
 <tr><th scope="row">Template</th><td>Not marked as a template. To copy it, read its licence first, then follow <a href="/publish/">how to copy a site</a>.</td></tr>
 </tbody></table></div>
 <h2>Listing record</h2>

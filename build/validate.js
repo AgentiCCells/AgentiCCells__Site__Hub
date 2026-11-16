@@ -125,6 +125,8 @@ try {
       for (const k of Object.keys(h)) if (/vault/i.test(k)) fail(`${rel(f)}: vault field "${k}" not allowed until a vault exists and its owner gives it`);
       const m = (h.repository || '').match(/github\.com\/([\w.-]+)\/([\w.-]+)$/);
       if (m && !existsSync(join(root, 'site', m[1].toLowerCase(), m[2].toLowerCase(), 'index.html'))) fail(`${rel(f)}: no built page for this entry`);
+      if (h.licence && !builtIndex.includes(h.licence.code)) fail(`${rel(f)}: licence not shown on the index card`);
+      if (!/<th scope="row">Version<\/th>/.test(builtIndex)) fail(`${rel(f)}: no version row on the index card`);
       if (h.name && !builtIndex.includes(h.name)) fail(`${rel(f)}: not shown on the index page`);
     } catch (err) { fail(`${rel(f)}: ${err.message}`); }
   }

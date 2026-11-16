@@ -2,6 +2,7 @@
 title: Publish a site to the hub, or copy one
 description: How a site gets listed on the AgentiCCells hub with a hub.json file, how its owner asks to leave, and how to copy a listed site.
 nav: 2
+navlabel: Publish or copy
 ---
 # Publish a site to the hub, or copy one
 
