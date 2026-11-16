@@ -6,7 +6,7 @@
   var cards = Array.prototype.slice.call(document.querySelectorAll('.cell-card, .cell-row'));
   var secs = ['sec-parts', 'sec-proposed', 'sec-tests'].map(function (i) { return document.getElementById(i); });
   var fmore = document.getElementById('fmore');
-  if (fmore && window.matchMedia('(min-width: 48rem)').matches) fmore.open = true;
+  if (fmore && window.matchMedia('(min-width: 44rem)').matches) fmore.open = true;
   var q = document.getElementById('q'), kind = document.getElementById('kind'), status = document.getElementById('status'), where = document.getElementById('where');
   var count = document.getElementById('count'), none = document.getElementById('none');
   var params = new URLSearchParams(location.search);

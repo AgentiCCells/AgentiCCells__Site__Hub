@@ -72,15 +72,15 @@ export default async function (ctx) {
   const kindCounts = Object.keys(KINDS).map((k) => [k, cells.filter((c) => c.kind === k).length]).filter(([, n]) => n);
 
   const dataAttrs = (c) => `data-kind="${esc(c.kind)}" data-status="${esc(c.status)}" data-live="${c.live ? 'yes' : 'no'}" data-text="${esc([c.name, c.id, c.what, c.kindLabel, c.live_status].join(' ').toLowerCase())}"`;
-  const tags = (c) => `<span class="tag">${esc(c.kindLabel)}</span> <span class="tag is-${esc(c.status)}">${esc(c.live_status)}</span>`;
+  const tags = (c) => `<span class="kindline">${esc(c.kindLabel)}</span> <span class="tag is-${esc(c.status)}">${esc(c.live_status)}</span>`;
   const card = (c) => `<li class="cell-card" ${dataAttrs(c)}>
 <a class="preview" href="${esc(c.path)}" tabindex="-1" aria-hidden="true">${preview(c)}</a>
-<div class="body"><p class="tags">${tags(c)}</p>
-<h3><a class="title" href="${esc(c.path)}">${esc(c.name)}</a></h3>
+<div class="body"><h3><a class="title" href="${esc(c.path)}">${esc(c.name)}</a></h3>
+<p class="tags">${tags(c)}</p>
 <p>${esc(c.what)}</p>
 <p class="meta"><small>${esc(c.live.replace('https://', ''))} · ${esc(c.version || 'no version')}</small></p></div>
 </li>`;
-  const row = (c) => `<li class="cell-row" ${dataAttrs(c)}><a class="title" href="${esc(c.path)}">${esc(c.name)}</a> <span class="tags">${tags(c)}</span><span class="what">${esc(c.what)}</span></li>`;
+  const row = (c) => `<li class="cell-row" ${dataAttrs(c)}><a class="title" href="${esc(c.path)}">${esc(c.name)}</a> <span class="tags">${tags(c)}</span>${/^Specialist agent for /.test(c.what) ? '' : `<span class="what">${esc(c.what)}</span>`}</li>`;
   const withAddr = cells.filter((c) => c.live && c.shot);
   const parts = cells.filter((c) => !(c.live && c.shot) && (c.status === 'demo' || c.status === 'live'));
   const proposed = cells.filter((c) => c.status === 'proposed');
@@ -114,7 +114,7 @@ ${withAddr.map(card).join('\n')}
 <section id="sec-parts"><h2>Parts</h2><p>Parts the cells are made from. They have no address to open.</p><ul class="cell-rows">
 ${parts.map(row).join('\n')}
 </ul></section>
-<section id="sec-proposed"><h2>Proposed, not built yet</h2><p>Described in a newsroom article, or with a repository started. Nothing to try yet.</p><ul class="cell-rows">
+<section id="sec-proposed"><h2>Proposed, not built yet</h2><p>Described in a newsroom article (the specialists) or with a repository started. Nothing to try yet; each page links the repository.</p><ul class="cell-rows">
 ${proposed.map(row).join('\n')}
 </ul></section>
 <details class="tests" id="sec-tests"><summary>Parts and tests: factory pipeline test runs (${tests.length})</summary><ul class="cell-rows">

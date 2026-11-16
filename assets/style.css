@@ -43,8 +43,9 @@ code,pre{font-family:var(--mono);font-size:.9em;overflow-wrap:anywhere;white-spa
 code{background:var(--surface);padding:.05em .3em;border-radius:.25rem}
 img{max-width:100%;height:auto}
 
-/* Header and the text mark. A plain wordmark: no special styling of the letters
-   until the Creative Commons trademark question (researcher@ S4, designer@ D7) is answered. */
+/* Header and the mark. The mark is the plain letters ACC in a square tile (not two Cs in a circle, which
+   is the Creative Commons symbol); no arc or circle mark until the Creative Commons trademark question
+   (researcher@ S4, designer@ D7) is answered by Dinis. */
 header{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative}
 @media (min-width:48rem){header,main,footer{max-width:46rem}}
 .brand{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;font-size:var(--step-1);letter-spacing:-.01em;color:var(--fg);text-decoration:none;min-height:2.75rem}
@@ -165,3 +166,19 @@ details.tests summary{cursor:pointer;min-height:2.75rem;display:flex;align-items
 
 .brand .label{font-weight:500;color:var(--muted);margin-left:.15rem}
 @media (max-width:30rem){.brand{font-size:1rem;gap:.4rem}.brand .mark{width:36px;height:24px}header{flex-wrap:nowrap}}
+
+/* v0.1.10: design review (specialist-design@, 2026-11-16). */
+.lede{max-width:var(--measure)}
+.kindline{color:var(--muted);font-size:.9375rem}
+.kindline::after{content:" ·"}
+.tag.is-live{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.cell-card .preview img{outline:1px solid var(--line);outline-offset:-1px}
+.cell-card .preview{border-bottom:1px solid var(--line)}
+@media (min-width:44rem){
+  .filters{display:flex;gap:.75rem;align-items:flex-end}
+  .f-q{flex:0 0 18rem;max-width:none;margin:0}
+  .f-more{flex:1}
+  .f-more summary{display:none}
+  .f-grid{margin:0;grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-color-scheme:dark){.cell-card .preview img,.shots img{filter:brightness(.92)}}
