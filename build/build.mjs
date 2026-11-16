@@ -59,7 +59,7 @@ function markdown(body) {
 
 // The site nav: every page with a `nav:` number in its front matter (or returned
 // by a page hook), in that number's order. Pages without one stay out of the nav.
-const MARK = '<svg class="mark" viewBox="0 0 48 32" width="42" height="28" role="img" aria-label="ACC" focusable="false"><rect width="48" height="32" rx="6" fill="currentColor"/><text x="24" y="22.5" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif" font-size="15.5" font-weight="800" letter-spacing=".4" fill="var(--on-accent)">ACC</text></svg>';
+const MARK = '<svg class="mark" viewBox="0 0 53 32" width="46" height="28" role="img" aria-label="ACC" focusable="false"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 26 L11 6 L18.5 26 M6.4 19.5 H15.6"/><path d="M35.5 6.5 A10.5 10.5 0 1 0 35.5 25.5" opacity=".6"/><path d="M48.25 9.5 A10.5 10.5 0 1 0 48.25 22.5"/></g></svg>';
 // Every nav page is a primary link, labelled by `navlabel` (front matter or hook) or else its title.
 function navList(items, current) {
   return items.map((n) => `<li><a href="${esc(n.url)}"${n.url === current ? ' aria-current="page"' : ''}>${esc(n.label || n.title)}</a></li>`).join('');

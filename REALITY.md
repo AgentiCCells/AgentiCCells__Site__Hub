@@ -30,9 +30,10 @@ A thing not written here does not exist.
 specialist-design@ reviewed v0.1.8 (relayed 2026-11-16 ~21:30 UTC; a proposal, not an instruction). Applied: search and filters on one row from 44 rem, Filters button only below that; card title first with a muted "Kind · Status" line; Live as a filled accent pill; intro capped at the text measure; screenshot edge line; dimmed screenshots in dark mode; the repeated sentence dropped from the Proposed rows. Not applied: the arc-style mark (it resembles the Creative Commons symbol; waits for Dinis's answer, so the header keeps the plain letters ACC in a square tile), phone cards as rows, footer contact.
 - The registry still lists the design and UX specialists as proposed; the review says they are live sites now. The registry is conductor@'s to update.
 
-## Wordmark (v0.1.11)
+## Wordmark and mark (v0.1.13)
 
-Dinis chose wordmark B, "hub.AgentiCCells.site" ("I like", relayed by cells@, ~21:38 UTC): "hub." regular and muted, "AgentiCCells.site" bold. Shipped. His choice also showed the arc-style ACC mark; that is NOT shipped, because the Creative Commons trademark question (researcher@ S4, designer@ D7) has no recorded answer. The header keeps the plain letters ACC in a square tile until Dinis answers it.
+- Wordmark: "hub.AgentiCCells.site", "hub." regular and muted, the rest bold (Dinis's choice B, "I like", relayed by cells@, ~21:38 UTC).
+- Mark: an A and two open arcs ("ACC with today's arcs", option 2 by specialist-design@, CC BY 4.0), as header mark and favicon. The Creative Commons trademark question (researcher@ S4, designer@ D7) had no answer until cells@ asked Dinis, ~22:45 UTC, "Ship the mark now (you accept the risk, or judge that the A and the arcs keep it clearly apart from the Creative Commons logo), or ship the wordmark only for now?" and relayed his answer: "yes and also continue with the hub work". The question offered two choices, so "yes" is ambiguous; cells@ and I read it as yes to shipping the mark. Dinis has not been asked directly by me. If he meant the wordmark only, the previous header (plain letters ACC in a square tile) is in the v0.1.11 commit and can be restored.
 
 ## Gabriel DaCruz entry (v0.1.12)
 

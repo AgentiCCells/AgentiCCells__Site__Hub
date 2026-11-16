@@ -43,9 +43,8 @@ code,pre{font-family:var(--mono);font-size:.9em;overflow-wrap:anywhere;white-spa
 code{background:var(--surface);padding:.05em .3em;border-radius:.25rem}
 img{max-width:100%;height:auto}
 
-/* Header and the mark. The mark is the plain letters ACC in a square tile (not two Cs in a circle, which
-   is the Creative Commons symbol); no arc or circle mark until the Creative Commons trademark question
-   (researcher@ S4, designer@ D7) is answered by Dinis. */
+/* Header and the mark: an A and two open arcs (specialist-design@, option 2), not two Cs in a circle.
+   Dinis accepted it over the Creative Commons trademark question, see REALITY.md. */
 header{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative}
 @media (min-width:48rem){header,main,footer{max-width:46rem}}
 .brand{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;font-size:var(--step-1);letter-spacing:-.01em;color:var(--fg);text-decoration:none;min-height:2.75rem}
