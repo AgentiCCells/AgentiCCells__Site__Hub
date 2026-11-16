@@ -31,6 +31,7 @@ export default async function (ctx) {
   const reg = read('data/cells-registry.json');
   const src = read('data/cells-registry.source.json');
   const names = read('data/cell-names.json');
+  const texts = read('data/cell-text.json');
   const shots = Object.fromEntries(read('data/screenshots.json').shots.map((s) => [s.id, s]));
 
   const cells = reg.cells.filter((c) => c.listed === true).map((c) => {
@@ -40,7 +41,7 @@ export default async function (ctx) {
     if (!KINDS[c.kind]) throw new Error(`cells-registry.json: unknown kind ${c.kind} for ${c.id}`);
     const st = STATUS[c.status];
     if (!st) throw new Error(`cells-registry.json: unknown status ${c.status} for ${c.id}`);
-    return { ...c, name, kindLabel, kindText, live_status: st[0], status_text: st[1], path: `/cells/${c.id}/`, shot: shots[c.id] };
+    return { ...c, what: texts[c.id]?.what || c.what, name, kindLabel, kindText, live_status: st[0], status_text: st[1], path: `/cells/${c.id}/`, shot: shots[c.id] };
   }).sort((a, b) => {
     const ia = ORDER.indexOf(a.id), ib = ORDER.indexOf(b.id);
     return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
@@ -137,11 +138,19 @@ ${tests.map(row).join('\n')}
 
   const cellPages = cells.map((c) => {
     const s = c.shot;
-    const shotHtml = s ? `<h2>Screenshots</h2>
+    const stamp = (x) => esc(x.taken_at.replace('T', ' ').replace('Z', ' UTC'));
+    const more = (s && s.more ? s.more : []).map((m) => `<h3>${esc(m.label)}</h3>
+<p><small>${esc(c.live + m.path)}</small></p>
+<div class="shots">
+<figure><img src="${esc(m.shots[1366].file)}" width="${m.shots[1366].width}" height="${m.shots[1366].height}" alt="${esc(`Screenshot of ${m.label}, a design of ${c.name}, at 1366 pixels wide, taken ${day(m.shots[1366].taken_at)}`)}" loading="lazy"><figcaption>Desktop, 1366 pixels wide. Taken ${stamp(m.shots[1366])}, when the live site was ${esc(m.version_at_capture)}.</figcaption></figure>
+<figure class="phone"><img src="${esc(m.shots[390].file)}" width="${m.shots[390].width}" height="${m.shots[390].height}" alt="${esc(`Screenshot of ${m.label}, a design of ${c.name}, at 390 pixels wide, taken ${day(m.shots[390].taken_at)}`)}" loading="lazy"><figcaption>Phone, 390 pixels wide. Taken ${stamp(m.shots[390])}.</figcaption></figure>
+</div>`).join('\n');
+    const shotHtml = s ? `<h2>Screenshots</h2>${s.more ? `\n<h3>${esc(s.main_label)}</h3>` : ''}
 <div class="shots">
 <figure><img src="${esc(s.shots[1366].file)}" width="${s.shots[1366].width}" height="${s.shots[1366].height}" alt="${esc(alt(c, 1366))}"><figcaption>Desktop, 1366 pixels wide. Taken ${esc(s.shots[1366].taken_at.replace('T', ' ').replace('Z', ' UTC'))}, when the live site was ${esc(s.version_at_capture || 'of unknown version')}.</figcaption></figure>
 <figure class="phone"><img src="${esc(s.shots[390].file)}" width="${s.shots[390].width}" height="${s.shots[390].height}" alt="${esc(alt(c, 390))}"><figcaption>Phone, 390 pixels wide. Taken ${esc(s.shots[390].taken_at.replace('T', ' ').replace('Z', ' UTC'))}.</figcaption></figure>
-</div>` : `<h2>Screenshots</h2>
+</div>
+${more}` : `<h2>Screenshots</h2>
 <p>None. This cell has no live address, so there is nothing to photograph. Its repository is the place to look.</p>`;
     const notes = {
       demo: '<p class="note"><strong>Demo.</strong> We made this to show what a cell can do. Anything it says about prices, people or orders may be invented, and the cell says so itself.</p>',

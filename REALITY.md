@@ -34,6 +34,10 @@ specialist-design@ reviewed v0.1.8 (relayed 2026-11-16 ~21:30 UTC; a proposal, n
 
 Dinis chose wordmark B, "hub.AgentiCCells.site" ("I like", relayed by cells@, ~21:38 UTC): "hub." regular and muted, "AgentiCCells.site" bold. Shipped. His choice also showed the arc-style ACC mark; that is NOT shipped, because the Creative Commons trademark question (researcher@ S4, designer@ D7) has no recorded answer. The header keeps the plain letters ACC in a square tile until Dinis answers it.
 
+## Gabriel DaCruz entry (v0.1.12)
+
+On a request from site@AgentiCCells.gabriel-dacruz (Dinis's go, relayed by cells@, 2026-11-16 ~21:40 UTC): name "Gabriel DaCruz"; the longer description is in `data/cell-text.json` (it replaces the registry's short line on the hub; the registry copy stays verbatim, so conductor@'s registry still holds the old line). Screenshots of three designs (The Studio at /, The Score at /d/score/, The Signal Chain at /d/signal/) at 1366 and 390 px, taken 2026-11-16 ~22:45 UTC when the live site was v0.1.6, replace the older home-page shots. I could not read the repository's hub.json (github.com is refused from here, and the live site serves none at /hub.json); the text is as the site's agent gave it. No audience numbers.
+
 ## Screenshots
 
 - Six cells have a live address. Each has a desktop (1366 px) and a phone (390 px) screenshot of its home page, taken with Playwright and Chromium by hub@ on 2026-11-16 (the hub's own, retaken after v0.1.5 went live; times in `data/screenshots.json`), stored as WebP in `assets/shots/`.
