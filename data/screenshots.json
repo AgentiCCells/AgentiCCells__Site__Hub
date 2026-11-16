@@ -245,6 +245,294 @@
     }
    ],
    "main_label": "The Studio"
+  },
+  {
+   "id": "jose-bota",
+   "source": "https://jose-bota.agenticcells.site",
+   "version_at_capture": "v0.1.3",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T22:50:34Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/jose-bota-390.webp",
+     "bytes": 27856,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T22:50:32Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/jose-bota-1366.webp",
+     "bytes": 46342,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/jose-bota-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 27662,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+   }
+  },
+  {
+   "id": "silvio-switha",
+   "source": "https://silvio-switha.agenticcells.site",
+   "version_at_capture": "v0.1.4",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T22:50:40Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/silvio-switha-390.webp",
+     "bytes": 39048,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T22:50:37Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/silvio-switha-1366.webp",
+     "bytes": 69792,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/silvio-switha-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 35326,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+   }
+  },
+  {
+   "id": "yiheng-wang",
+   "source": "https://yiheng-wang.agenticcells.site",
+   "version_at_capture": "v0.1.8",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T22:50:45Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/yiheng-wang-390.webp",
+     "bytes": 30660,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T22:50:43Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/yiheng-wang-1366.webp",
+     "bytes": 56520,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/yiheng-wang-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 26954,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+   }
+  },
+  {
+   "id": "specialist-agent-behaviour-policies",
+   "source": "https://specialist-abp.agenticcells.site",
+   "version_at_capture": "v0.1.6",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T22:50:50Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-agent-behaviour-policies-390.webp",
+     "bytes": 42816,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T22:50:48Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-agent-behaviour-policies-1366.webp",
+     "bytes": 56970,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/specialist-agent-behaviour-policies-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 30044,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+   }
+  },
+  {
+   "id": "specialist-design",
+   "source": "https://specialist-design.agenticcells.site",
+   "version_at_capture": "v0.1.7",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T22:50:55Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-design-390.webp",
+     "bytes": 39494,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T22:50:53Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-design-1366.webp",
+     "bytes": 50446,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/specialist-design-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 32198,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+   }
+  },
+  {
+   "id": "specialist-writing",
+   "source": "https://specialist-writing.agenticcells.site",
+   "version_at_capture": "v0.1.8",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T22:50:59Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-writing-390.webp",
+     "bytes": 41442,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T22:50:57Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-writing-1366.webp",
+     "bytes": 49608,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/specialist-writing-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 29502,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+   }
+  },
+  {
+   "id": "specialist-security",
+   "source": "https://specialist-security.agenticcells.site",
+   "version_at_capture": "v0.1.2",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T22:51:03Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-security-390.webp",
+     "bytes": 38910,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T22:51:01Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-security-1366.webp",
+     "bytes": 50864,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/specialist-security-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 29694,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+   }
+  },
+  {
+   "id": "specialist-code",
+   "source": "https://specialist-code.agenticcells.site",
+   "version_at_capture": "v0.1.7",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T22:51:08Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-code-390.webp",
+     "bytes": 39006,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T22:51:06Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-code-1366.webp",
+     "bytes": 51960,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/specialist-code-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 31662,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+   }
+  },
+  {
+   "id": "specialist-ux",
+   "source": "https://specialist-ux.agenticcells.site",
+   "version_at_capture": "v0.1.5",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T22:51:12Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-ux-390.webp",
+     "bytes": 30516,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T22:51:10Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-ux-1366.webp",
+     "bytes": 39508,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/specialist-ux-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 27248,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+   }
   }
  ]
 }

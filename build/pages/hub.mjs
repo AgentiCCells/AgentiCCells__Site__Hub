@@ -115,7 +115,7 @@ ${withAddr.map(card).join('\n')}
 <section id="sec-parts"><h2>Parts</h2><p>Parts the cells are made from. They have no address to open.</p><ul class="cell-rows">
 ${parts.map(row).join('\n')}
 </ul></section>
-<section id="sec-proposed"><h2>Proposed, not built yet</h2><p>Described in a newsroom article (the specialists) or with a repository started. Nothing to try yet; each page links the repository.</p><ul class="cell-rows">
+<section id="sec-proposed"><h2>Proposed, not built yet</h2><p>Described in a newsroom article, or with a repository started. Nothing to try yet; each page links the repository.</p><ul class="cell-rows">
 ${proposed.map(row).join('\n')}
 </ul></section>
 <details class="tests" id="sec-tests"><summary>Parts and tests: factory pipeline test runs (${tests.length})</summary><ul class="cell-rows">

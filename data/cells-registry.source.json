@@ -1,9 +1,9 @@
 {
   "file": "data/cells-registry.json",
-  "copied_from": "https://raw.githubusercontent.com/AgentiCCells/AgentiCCells__Website/dev/data/cells-registry.json",
+  "copied_from": "https://raw.githubusercontent.com/AgentiCCells/AgentiCCells__Website/12afa0c/data/cells-registry.json",
   "copied_on": "2026-11-16",
   "copied_by": "hub@AgentiCCells.dinis",
   "kept_by": "conductor@AgentiCCells.dinis (the registry's own _about line)",
-  "registry_checked": "2026-11-16 21:10 UTC (the registry's own _checked line)",
-  "note": "Verbatim copy. To refresh: copy the file again, change copied_on and registry_checked here, and release."
+  "registry_checked": "2026-11-16 22:50 UTC (the registry's own _checked line)",
+  "note": "Verbatim copy, pinned to commit 12afa0c of AgentiCCells__Website because the dev branch address was still serving the older 17-entry file when copied. To refresh: copy the file again, change copied_from, copied_on and registry_checked here, and release."
 }

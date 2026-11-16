@@ -5,7 +5,7 @@ A thing not written here does not exist.
 ## What the hub is
 
 - A catalogue of the cells AgentiCCells has made, built from `data/cells-registry.json`: a copy of conductor@'s registry in AgentiCCells__Website (branch dev), copied 2026-11-16, registry checked 2026-11-16 18:10 UTC. Source and date: `data/cells-registry.source.json`. The copy is verbatim (refreshed 2026-11-16 after conductor@ removed the excluded cell's name from the registry).
-- Home page (v0.1.8, after reviewer@'s review): cards for the six cells with a live address and screenshot, in the order riskmandate, orange grower, Gabriel DaCruz, company site, agenticcells.site, hub; then compact rows for parts (site factory, site template) and for proposed cells (email and six specialists); the two factory test runs sit in a closed "Parts and tests" section that opens when a search or filter matches. Search, and filters (behind a Filters button on a phone) by kind, status and address. Thumbnails are a crop of the top 1100 x 480 px of each 1366 px screenshot.
+- Home page (v0.1.14): cards for the 15 cells with a live address and screenshot (riskmandate, orange grower, Gabriel DaCruz, company site, agenticcells.site, hub first, then the three new personal sites and the six specialist sites); then compact rows for parts (site factory, site template) and for the one proposed cell (email); the two factory test runs sit in a closed "Parts and tests" section that opens when a search or filter matches. Search, and filters (behind a Filters button on a phone) by kind, status and address. Thumbnails are a crop of the top 1100 x 480 px of each 1366 px screenshot.
 - Statuses are the registry's: live, demo, proposed, test (meanings in its _statuses field). Only proposed and test are not called Demo.
 - Versions on cards and pages are read from each live address's own /version.json when the hub is built (date shown on the cell page); the registry value is the fallback. A version is only as fresh as the last release of the hub: nothing rebuilds it on a schedule. The filters need `assets/hub.js`, which is this site's own plain script; without it every card still shows.
 - A page per cell at `/cells/<id>/`: what it does, kind, status, live address, repository, version, licence pointer, how to find it, how to copy it, and how to ask for one like it through https://agenticcells.ai.
@@ -39,9 +39,13 @@ specialist-design@ reviewed v0.1.8 (relayed 2026-11-16 ~21:30 UTC; a proposal, n
 
 On a request from site@AgentiCCells.gabriel-dacruz (Dinis's go, relayed by cells@, 2026-11-16 ~21:40 UTC): name "Gabriel DaCruz"; the longer description is in `data/cell-text.json` (it replaces the registry's short line on the hub; the registry copy stays verbatim, so conductor@'s registry still holds the old line). Screenshots of three designs (The Studio at /, The Score at /d/score/, The Signal Chain at /d/signal/) at 1366 and 390 px, taken 2026-11-16 ~22:45 UTC when the live site was v0.1.6, replace the older home-page shots. I could not read the repository's hub.json (github.com is refused from here, and the live site serves none at /hub.json); the text is as the site's agent gave it. No audience numbers.
 
+## Registry refresh (v0.1.14)
+
+Copy now pinned to commit 12afa0c of AgentiCCells__Website (the dev address still served the old 17-entry file): 20 entries. New: Yiheng Wang, Silvio Switha and José Bota personal sites, each with a consent line in the registry (Dinis, relayed by cells@, ~22:45 UTC; this hub did not check it). The six specialists are now demos with live addresses. Nine new cells have 1366 and 390 px screenshots taken 2026-11-16 ~22:55 UTC. Their live home pages were checked for the excluded client cell's name: none.
+
 ## Screenshots
 
-- Six cells have a live address. Each has a desktop (1366 px) and a phone (390 px) screenshot of its home page, taken with Playwright and Chromium by hub@ on 2026-11-16 (the hub's own, retaken after v0.1.5 went live; times in `data/screenshots.json`), stored as WebP in `assets/shots/`.
+- Fifteen cells have a live address (six at first, nine added in v0.1.14). Each has a desktop (1366 px) and a phone (390 px) screenshot of its home page, taken with Playwright and Chromium by hub@ on 2026-11-16 (the hub's own, retaken after v0.1.5 went live; times in `data/screenshots.json`), stored as WebP in `assets/shots/`.
 - Cells with no live address show a labelled placeholder, not a screenshot.
 - To retake: see `data/screenshots.json`; the capture was a viewport screenshot after the page finished loading.
 
