@@ -1,8 +1,8 @@
 # AgentiCCells__Site__Hub
 
-The source of https://hub.agenticcells.site, a hub that lists agentic sites by their owners' consent. There is no database: `registry/*.json` holds one entry per listed site (a verbatim copy of the site's own `hub.json`, with the copy date and the owner's consent), and `build/pages/hub.mjs` generates the index and a page at `/<owner>/<site>/` for each. `data/coming.json` holds made-up "coming" examples, which the validator requires to be marked as such.
+The source of https://hub.agenticcells.site, a catalogue of the cells AgentiCCells has made (Hugging Face and GitHub style: search, filters, a page per cell with screenshots, repository, version and how to copy it). There is no database: `data/cells-registry.json` is a copy of the team's registry (source and date in `data/cells-registry.source.json`), and `build/pages/hub.mjs` generates the home page and `/cells/<id>/` from it, with `data/cell-names.json` and `data/screenshots.json`.
 
-Build and check: `node build/build.mjs && node build/validate.js && node build/leak-scan.mjs`. Release: `team/release.sh` (pushes to `dev`; CI deploys and sets the version).
+Build and check: `node build/build.mjs && node build/validate.js && node build/leak-scan.mjs && node build/check-excluded.mjs`. Release: `team/release.sh` (pushes to `dev`; CI deploys and sets the version). Screenshots in `assets/shots/` are taken with Playwright and Chromium; their times are in `data/screenshots.json`.
 
 Licences: code Apache-2.0 (see LICENSE); text and images CC BY 4.0.
 
@@ -22,3 +22,5 @@ All from https://github.com/AgentiCCells/AgentiCCells__Website (branch `dev`), r
 - Not taken: the console and abp hooks, checks and data, which this site does not have.
 
 The hub's idea and first-version scope come from Dinis Cruz, "A hub for agentic sites", newsroom.sgit.ai, 2026-11-15.
+
+- 2026-11-16 (v0.2): registry replaced by `data/cells-registry.json` from AgentiCCells__Website (dev); `build/check-excluded.mjs`, `assets/hub.js` and the catalogue styles are new.

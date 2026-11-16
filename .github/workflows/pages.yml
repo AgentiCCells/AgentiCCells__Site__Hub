@@ -42,6 +42,8 @@ jobs:
       - run: node build/validate.js
       - name: Leak scan (tracked files and the built site)
         run: node build/leak-scan.mjs
+      - name: The excluded client cell is not named anywhere
+        run: node build/check-excluded.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

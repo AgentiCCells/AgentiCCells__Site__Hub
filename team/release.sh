@@ -6,6 +6,7 @@ cd "$(dirname "$0")/.."
 node build/build.mjs
 node build/validate.js
 node build/leak-scan.mjs
+node build/check-excluded.mjs
 for i in 1 2 3 4 5; do
   git fetch -q origin dev
   git rebase -q origin/dev

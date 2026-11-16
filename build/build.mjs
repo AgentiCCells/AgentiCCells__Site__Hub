@@ -1,5 +1,5 @@
 // Turns content/, registry/ and data/ into site/ (the hub's pages come from build/pages/hub.mjs). Node only, no dependencies.
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, copyFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, copyFileSync, cpSync, existsSync } from 'node:fs';
 import { join, dirname, normalize } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -86,13 +86,13 @@ ${meta.noindex ? '<meta name="robots" content="noindex">\n' : ''}${origin && !me
 <meta property="og:description" content="${esc(meta.description || '')}">
 ${origin ? `<meta property="og:url" content="${esc(origin + current)}">\n` : ''}<meta name="twitter:card" content="summary">
 </head>
-<body>
+<body${meta.bodyclass ? ` class="${esc(meta.bodyclass)}"` : ''}>
 <header><a class="brand" href="/">${MARK}<span>AgentiCCells hub</span></a>${navHtml(nav, current)}</header>
 <main>
 ${content}
 </main>
-<footer><p>Contact: <a href="mailto:${contact}">${contact}</a></p><p>Code under Apache-2.0. Text and images under CC BY 4.0.</p><p>Also from AgentiCCells: <a href="https://agenticcells.ai">agenticcells.ai</a> and <a href="https://agenticcells.site">agenticcells.site</a>.</p><p class="version">Version ${esc(version)}</p></footer>
-</body>
+<footer><p>Contact: <a href="mailto:${contact}">${contact}</a></p><p>Code under Apache-2.0. Text and images under CC BY 4.0.</p><p>Consultancy and the four ways to start: <a href="https://agenticcells.ai">agenticcells.ai</a>. Also: <a href="https://agenticcells.site">agenticcells.site</a>.</p><p class="version">Version ${esc(version)}</p></footer>
+${meta.script ? `<script src="${esc(meta.script)}" defer></script>\n` : ''}</body>
 </html>
 `;
 }
@@ -164,7 +164,7 @@ for (const p of pages) {
   mkdirSync(dirname(join(out, p.file)), { recursive: true });
   writeFileSync(join(out, p.file), page(p, p.html, nav, urlFor(p.file)));
 }
-for (const f of readdirSync(join(root, 'assets'))) copyFileSync(join(root, 'assets', f), join(out, 'assets', f));
+cpSync(join(root, 'assets'), join(out, 'assets'), { recursive: true });
 if (existsSync(join(root, 'CNAME'))) copyFileSync(join(root, 'CNAME'), join(out, 'CNAME'));
 // Extra files from page hooks (ctx.files: [{ path, content }], path under site/), written after site/ is cleared.
 for (const { path, content } of ctx.files) {

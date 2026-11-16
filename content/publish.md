@@ -1,40 +1,36 @@
 ---
-title: Publish a site to the hub, or copy one
-description: How a site gets listed on the AgentiCCells hub with a hub.json file, how its owner asks to leave, and how to copy a listed site.
+title: Find, copy or ask for a cell
+description: How to find a cell on the AgentiCCells hub, how to copy one, how to ask for one like it, and how a cell comes to be listed.
 nav: 2
-navlabel: Publish or copy
+navlabel: Find and copy
 ---
-# Publish a site to the hub, or copy one
+# Find, copy or ask for a cell
 
-The hub is a list of agentic sites. It has no database. Each site carries a small file called `hub.json`, the hub keeps a copy of that file in its registry, and every page here is generated from those copies.
+The hub is a catalogue of the cells AgentiCCells has made. It lists them and shows them; it does not sell them. For consultancy and the four ways to start, see [agenticcells.ai](https://agenticcells.ai).
 
-## Publish a site
+## Find a cell
 
-1. **Own the site.** The owner of a site decides whether it is listed. Nothing is listed without the owner's consent, and the hub records the date of that consent.
-2. **Add a hub.json to the site's repository.** Put it at the root. It holds the name, what the site does, the owner, the team, the live address, the repository, the licence and the address of the file that tells the site's version.
-3. **Say you agree.** Ask the hub's team to list the site. Today that means asking Dinis Cruz; the hub's team does not contact anyone and does not list a site on its own.
-4. **The hub copies the file.** The copy goes into `registry/` in the hub's repository with the date it was copied and the date of consent. The next build makes a page at `/<owner>/<site>/`.
-5. **Leave when you want.** The owner asks, and the entry is removed in the next release. Past versions of the hub stay in the repository's history, as every version does.
+1. Open the [home page](/) and use the search box, or filter by kind: site, factory, template, cell, specialist or factory test.
+2. Open a cell's page for its screenshots at desktop and phone width, what it does, its live address, its repository and its version.
+3. Open the live address to try it, or the repository to read how it is made.
 
-## What hub.json holds
+## Copy a cell
 
-- **Required:** `name`, `what_it_does`, `owner`, `team`, `live_address`, `repository`, `licence` and `version_from`.
-- **Later:** vault fields, once a site has an sgit vault. The hub does not show a vault until its owner gives one. It never stores a vault key.
-- **Not allowed:** passwords, tokens or keys of any kind.
-
-## Copy a site
-
-1. Open the site's page on the hub and follow its repository link.
-2. Check its licence. A site marked as a template says what you may change; for any other site, the licence is the rule.
-3. Copy the repository with `git clone`, or use the GitHub button "Use this template" where the owner has set it up.
-4. Change the text, the pictures and the address. Keep the licence notice and say where the site came from.
-5. Add your own `hub.json` if you want to be listed, as above.
+1. Open the cell's page and follow its repository link.
+2. Read the LICENSE file in the repository and keep its notices. The team's own rule is code under Apache-2.0 and text and images under CC BY 4.0, but the file in the repository is what counts.
+3. Clone the repository with `git clone`. If it is refused, the repository is not public yet.
+4. Change the text, the pictures and the address. Say where your copy came from.
 
 Sites are static files, so a copy opens locally without a server.
 
-## What is true today
+## Ask for one like it
 
-- **Listed:** AgentiCCells' own site, with its owner's consent.
-- **Coming:** made-up examples, marked as such on the front page.
-- **No vaults yet:** the sgit vault for each site does not exist, so no site shows one.
-- **No screenshots, search or kinds yet.** They are ideas in the founding article, not features.
+Ask the AgentiCCells team through [agenticcells.ai](https://agenticcells.ai). This hub gives no prices and takes no orders.
+
+## How a cell is listed
+
+- The list is the registry kept by the AgentiCCells conductor. The hub copies it and builds every page from the copy. There is no database.
+- A cell is listed only if its owner agrees. An owner can ask for an entry to be removed, and it goes in the next release.
+- Every cell is marked a demo unless the registry says it is live.
+- Screenshots are snapshots, dated on the page. Versions are the ones the registry recorded, with the date.
+- The hub never stores a password, token or vault key.

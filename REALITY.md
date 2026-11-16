@@ -1,26 +1,29 @@
-# REALITY.md: what is true of this repository, 2026-11-15
+# REALITY.md: what is true of this repository, 2026-11-16
 
 A thing not written here does not exist.
 
-- The source builds to `site/` and passes the validator and the leak scan locally. It has an index, a page explaining how to publish and copy, and one listed site page.
-- Listed: AgentiCCells' own site (agenticcells.ai), by its owner's consent. Nothing else is listed. Dinis's newsroom demo vaults are not listed yet: that needs their pages and Dinis's go-ahead for this hub.
-- Coming: one made-up example, the Algarve orange grower, marked as such.
-- No sgit vaults exist for any listed site, so none is shown. No search, screenshots or kinds.
-- Deployed: v0.1.1 serves https://hub.agenticcells.site/ (reviewer@, 2026-11-16: https answers, http redirects). A release on 2026-11-16 (reviewer's fixes) is the next version.
-- Header: short nav labels ("Sites", "Publish or copy"), the teal "C" mark and the script-free Menu, all taken from agenticcells.ai's template (AgentiCCells__Website, dev, 2026-11-16).
-- "Listed now" cards show address, licence and version. The version is read from the site's own version.json when the page is built; if it cannot be read, the card says so. It is a build-time snapshot, not live.
-- Footer links to agenticcells.ai and agenticcells.site.
+## What the hub is
+
+- A catalogue of the cells AgentiCCells has made, built from `data/cells-registry.json`: a copy of conductor@'s registry in AgentiCCells__Website (branch dev), copied 2026-11-16, registry checked 2026-11-16 18:10 UTC. Source and date: `data/cells-registry.source.json`. One field of the copy (`_decision`) is removed, see below.
+- Home page: one card per listed cell (17 on the copy), with a preview, search, and filters by kind, status and whether the cell has a live address. The filters need `assets/hub.js`, which is this site's own plain script; without it every card still shows.
+- A page per cell at `/cells/<id>/`: what it does, kind, status, live address, repository, version, licence pointer, how to find it, how to copy it, and how to ask for one like it through https://agenticcells.ai.
+- Every cell is marked Demo unless the registry says its status is live. On the copy, only the company site, agenticcells.ai, says live.
+- No prices anywhere. Consultancy and the four ways to start are linked to https://agenticcells.ai, not described here.
+- Versions are the registry's `version_seen`, dated. They are not live readings.
+- Names shown are the hub's own choice, in `data/cell-names.json`; the registry holds none.
+
+## Screenshots
+
+- Six cells have a live address. Each has a desktop (1366 px) and a phone (390 px) screenshot of its home page, taken with Playwright and Chromium by hub@ on 2026-11-16 (times in `data/screenshots.json`), stored as WebP in `assets/shots/`. The hub's own screenshot shows the hub as it was before this release.
+- Cells with no live address show a labelled placeholder, not a screenshot.
+- To retake: see `data/screenshots.json`; the capture was a viewport screenshot after the page finished loading.
+
+## The excluded client cell
+
+Dinis excluded one client cell (2026-11-16). It is not in the registry and is never listed, linked or named by this hub. `build/check-excluded.mjs` fails the build, and so the release, if its subdomain or repository name appears in any file git knows about or in the built site; the pattern is built from parts and is not printed. The registry copy had its `_decision` field removed because that field quoted a sentence naming the cell. Earlier commits of this repository (before 2026-11-16 evening) mention it in `REALITY.md` and the activity log; history was not rewritten.
 
 ## Deployment
 
-The earlier HTTPS certificate problem (2026-11-15) is gone: https works. Settings stay with Dinis: Pages source GitHub Actions, custom domain hub.agenticcells.site, and the github-pages environment allowing dev. This session changed none of them.
-
-## Listing (2026-11-16)
-
-- The orange grower card reads "Made-up example, draft live, not yet listed", with no link. The draft's existence is as reported by conductor@ and reviewer@; this repository did not check it.
-- Not listed, pending the owners' consent and Dinis's word: the orange grower, Algarve Evolution and Gabriel DaCruz sites.
-- /publish/ still says to ask Dinis Cruz to list a site (his name is already public as founder); unchanged unless he says otherwise.
-
-## Standing rule: the Algarve Evolution site (Dinis, ~14:15 UTC 2026-11-16, relayed by conductor@)
-
-Dinis: "tell the sites not to touch this guy. In fact, this should not be linked anywhere... So this link should not exist in any other pages right now." This hub never lists, links or mentions that site's address, and never touches its repository. Keep this rule until Dinis lifts it. The name appears only in this file, which is not published. The live hub was checked by conductor@ at 15:11 UTC and does not mention it.
+- https://hub.agenticcells.site serves from GitHub Pages via `.github/workflows/pages.yml`; every push to dev deploys it and CI sets the next v0.1.N.
+- Settings (Pages source, custom domain, environment) stay with Dinis. This session changed none of them.
+- The earlier consent records and the "coming" example were removed: the orange grower is now a registry entry marked demo and made-up.

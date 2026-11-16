@@ -1,0 +1,155 @@
+{
+ "_about": "Screenshots taken with Playwright/Chromium by hub@AgentiCCells.dinis of each live address, top of the home page, one viewport each. Times are UTC. A screenshot is a snapshot: the live site may have changed since.",
+ "shots": [
+  {
+   "id": "agenticcells-ai",
+   "source": "https://agenticcells.ai",
+   "version_at_capture": "v0.1.134",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T18:08:11Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/agenticcells-ai-390.webp",
+     "bytes": 25306,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T18:08:09Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/agenticcells-ai-1366.webp",
+     "bytes": 41878,
+     "width": 1366,
+     "height": 768
+    }
+   }
+  },
+  {
+   "id": "agenticcells-site",
+   "source": "https://agenticcells.site",
+   "version_at_capture": "v0.1.4",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T18:08:16Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/agenticcells-site-390.webp",
+     "bytes": 27184,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T18:08:13Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/agenticcells-site-1366.webp",
+     "bytes": 40230,
+     "width": 1366,
+     "height": 768
+    }
+   }
+  },
+  {
+   "id": "hub",
+   "source": "https://hub.agenticcells.site",
+   "version_at_capture": "v0.1.4",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T18:08:21Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/hub-390.webp",
+     "bytes": 33946,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T18:08:19Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/hub-1366.webp",
+     "bytes": 42672,
+     "width": 1366,
+     "height": 768
+    }
+   }
+  },
+  {
+   "id": "riskmandate-at-websummit",
+   "source": "https://riskmandate-at-websummit.agenticcells.site",
+   "version_at_capture": "v0.1.5",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T18:08:48Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/riskmandate-at-websummit-390.webp",
+     "bytes": 20990,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T18:08:39Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/riskmandate-at-websummit-1366.webp",
+     "bytes": 43680,
+     "width": 1366,
+     "height": 768
+    }
+   }
+  },
+  {
+   "id": "algarve-orange-grower",
+   "source": "https://algarve-orange-grower.agenticcells.site",
+   "version_at_capture": "v0.1.4",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T18:08:54Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/algarve-orange-grower-390.webp",
+     "bytes": 49500,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T18:08:52Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/algarve-orange-grower-1366.webp",
+     "bytes": 135304,
+     "width": 1366,
+     "height": 768
+    }
+   }
+  },
+  {
+   "id": "gabriel-dacruz",
+   "source": "https://gabriel-dacruz.agenticcells.site",
+   "version_at_capture": "v0.1.3",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-16T18:08:59Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/gabriel-dacruz-390.webp",
+     "bytes": 22926,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-16T18:08:57Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/gabriel-dacruz-1366.webp",
+     "bytes": 41382,
+     "width": 1366,
+     "height": 768
+    }
+   }
+  }
+ ]
+}

@@ -2,6 +2,7 @@
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
@@ -16,7 +17,8 @@ function walk(dir, ext) {
 }
 const rel = (p) => p.slice(root.length + 1);
 const text = ['.md', '.json', '.html', '.css', '.js', '.mjs', '.yml'];
-const scanned = [...walk(join(root, 'content'), text), ...walk(join(root, 'data'), text), ...walk(join(root, 'registry'), text), ...walk(join(root, 'site'), text), ...walk(join(root, 'assets'), text)];
+const isoDate = /^\d{4}-\d{2}-\d{2}$/;
+const scanned = [...walk(join(root, 'content'), text), ...walk(join(root, 'data'), text), ...walk(join(root, 'site'), text), ...walk(join(root, 'assets'), text)];
 
 if (!existsSync(join(root, 'site/index.html'))) fail('site/index.html missing: run the build first');
 if (!existsSync(join(root, 'CNAME')) || readFileSync(join(root, 'CNAME'), 'utf8').trim() !== 'hub.agenticcells.site') fail('CNAME must contain hub.agenticcells.site');
@@ -99,48 +101,48 @@ for (const f of [...walk(join(root, 'content'), ['.md']), ...walk(join(root, 'si
   });
 }
 
-// Registry (ACC-024, ACC-028): one entry per listed site, a verbatim hub.json plus the copy date and the owner's consent.
-// Only sites whose owner has agreed may be listed: today AgentiCCells' own site (listed by its owner, who owns this hub).
-const consented = new Set(['AgentiCCells']);
-const isoDate = /^\d{4}-\d{2}-\d{2}$/;
+// Registry: the hub lists every entry of data/cells-registry.json (a verbatim copy, source and date in
+// data/cells-registry.source.json). Each gets a card and a page; every cell is a demo unless the registry says live.
 try {
-  const files = walk(join(root, 'registry'), ['.json']);
-  if (!files.length) fail('registry/: no entries');
+  const reg = JSON.parse(readFileSync(join(root, 'data/cells-registry.json'), 'utf8'));
+  const src = JSON.parse(readFileSync(join(root, 'data/cells-registry.source.json'), 'utf8'));
+  if (!isoDate.test(src.copied_on || '') || !/^https:\/\/raw\.githubusercontent\.com\//.test(src.copied_from || '')) fail('data/cells-registry.source.json: needs copied_from (raw.githubusercontent.com) and copied_on (a date)');
+  const shots = JSON.parse(readFileSync(join(root, 'data/screenshots.json'), 'utf8')).shots;
   const builtIndex = existsSync(join(root, 'site/index.html')) ? readFileSync(join(root, 'site/index.html'), 'utf8') : '';
-  for (const f of files) {
-    try {
-      const e = JSON.parse(readFileSync(f, 'utf8'));
-      const h = e.hub_json || {};
-      for (const k of ['name', 'what_it_does', 'owner', 'team', 'live_address', 'repository', 'version_from']) {
-        if (typeof h[k] !== 'string' || !h[k].trim()) fail(`${rel(f)}: hub_json.${k} must be a non-empty string`);
+  const kinds = new Set(['site', 'factory', 'template', 'cell', 'specialist', 'factory-test']);
+  const ids = new Set();
+  const listed = reg.cells.filter((c) => c.listed === true);
+  if (!listed.length) fail('registry: no listed cells');
+  for (const c of listed) {
+    if (ids.has(c.id)) fail(`registry: duplicate id ${c.id}`);
+    ids.add(c.id);
+    if (!kinds.has(c.kind)) fail(`registry: ${c.id} has unknown kind ${c.kind}`);
+    if (!/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+$/.test(c.repository || '')) fail(`registry: ${c.id} repository must be a github.com owner/repo address`);
+    if (c.live !== null && !/^https:\/\/[a-z0-9.-]+$/.test(c.live || '')) fail(`registry: ${c.id} live must be null or an https origin`);
+    const pf = join(root, 'site/cells', c.id, 'index.html');
+    if (!existsSync(pf)) { fail(`registry: no built page for ${c.id}`); continue; }
+    const pg = readFileSync(pf, 'utf8');
+    const want = c.status === 'live' ? 'Live' : 'Demo';
+    if (!new RegExp(`class="tag[^"]*">${want}</span>`).test(pg)) fail(`site/cells/${c.id}: must be marked ${want}`);
+    if (c.status !== 'live' && /class="tag is-live"/.test(pg)) fail(`site/cells/${c.id}: marked live but the registry does not say live`);
+    if (!builtIndex.includes(`href="/cells/${c.id}/"`)) fail(`site/index.html: no card for ${c.id}`);
+    if (c.live) {
+      const s = shots.find((x) => x.id === c.id);
+      for (const w of ['1366', '390']) {
+        if (!s || !s.shots[w] || !/^\d{4}-\d{2}-\d{2}T/.test(s.shots[w].taken_at || '')) fail(`data/screenshots.json: ${c.id} needs a ${w} px screenshot with taken_at`);
+        else if (!existsSync(join(root, s.shots[w].file.slice(1)))) fail(`data/screenshots.json: ${s.shots[w].file} missing`);
       }
-      if (!h.licence || typeof h.licence.code !== 'string' || typeof h.licence.text !== 'string') fail(`${rel(f)}: hub_json.licence needs code and text`);
-      if (!isoDate.test(e.copied_on || '')) fail(`${rel(f)}: copied_on must be a date (YYYY-MM-DD)`);
-      if (!/^https:\/\/raw\.githubusercontent\.com\//.test(e.copied_from || '')) fail(`${rel(f)}: copied_from must be the site's own hub.json on raw.githubusercontent.com`);
-      if (!e.consent || !isoDate.test(e.consent.given || '') || !String(e.consent.by || '').trim()) fail(`${rel(f)}: consent needs by and given (a date)`);
-      if (!consented.has(h.owner)) fail(`${rel(f)}: owner ${h.owner} has no recorded consent to be listed`);
-      if (!/^https:\/\/[a-z0-9.-]+$/.test(h.live_address || '')) fail(`${rel(f)}: live_address must be an https origin`);
-      if (!/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+$/.test(h.repository || '')) fail(`${rel(f)}: repository must be a github.com owner/repo address`);
-      if (h.version_from !== `${h.live_address}/version.json`) fail(`${rel(f)}: version_from must be ${h.live_address}/version.json`);
-      for (const k of Object.keys(h)) if (/vault/i.test(k)) fail(`${rel(f)}: vault field "${k}" not allowed until a vault exists and its owner gives it`);
-      const m = (h.repository || '').match(/github\.com\/([\w.-]+)\/([\w.-]+)$/);
-      if (m && !existsSync(join(root, 'site', m[1].toLowerCase(), m[2].toLowerCase(), 'index.html'))) fail(`${rel(f)}: no built page for this entry`);
-      if (h.licence && !builtIndex.includes(h.licence.code)) fail(`${rel(f)}: licence not shown on the index card`);
-      if (!/<th scope="row">Version<\/th>/.test(builtIndex)) fail(`${rel(f)}: no version row on the index card`);
-      if (h.name && !builtIndex.includes(h.name)) fail(`${rel(f)}: not shown on the index page`);
-    } catch (err) { fail(`${rel(f)}: ${err.message}`); }
+      if (!pg.includes('<img ')) fail(`site/cells/${c.id}: has a live address but shows no screenshot`);
+    }
   }
+  if (!/id="q"/.test(builtIndex) || !/id="kind"/.test(builtIndex)) fail('site/index.html: search and kind filter missing');
+  if (!/<script src="\/assets\/hub\.js" defer>/.test(builtIndex)) fail('site/index.html: hub.js not loaded');
 } catch (e) { fail(`registry: ${e.message}`); }
 
-// Coming entries: made-up examples, each marked as such in the data and on the built index page.
+// The excluded client cell must not appear anywhere (separate script so its pattern stays out of this file).
 try {
-  const { coming } = JSON.parse(readFileSync(join(root, 'data/coming.json'), 'utf8'));
-  const builtIndex = existsSync(join(root, 'site/index.html')) ? readFileSync(join(root, 'site/index.html'), 'utf8') : '';
-  for (const c of coming || []) {
-    if (c.made_up !== true) fail(`data/coming.json: ${c.name} must have made_up: true`);
-    if (!builtIndex.includes(c.name) || !/Coming\. Made-up example/.test(builtIndex)) fail(`site/index.html: "${c.name}" not shown as a coming, made-up example`);
-  }
-} catch (e) { fail(`data/coming.json: ${e.message}`); }
+  execFileSync(process.execPath, [join(root, 'build/check-excluded.mjs')], { stdio: 'pipe' });
+} catch (e) { fail(String(e.stderr || e.message).trim()); }
 
 // Selling basics (V3): canonical and Open Graph on every indexable page, sitemap, robots, 404, favicon.
 {
