@@ -164,23 +164,23 @@
   {
    "id": "gabriel-dacruz",
    "source": "https://gabriel-dacruz.agenticcells.site",
-   "version_at_capture": "v0.1.6",
+   "version_at_capture": "v0.1.9",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T22:41:43Z",
+     "taken_at": "2026-11-16T23:04:04Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
      "file": "/assets/shots/gabriel-dacruz-390.webp",
-     "bytes": 28652,
+     "bytes": 31346,
      "width": 390,
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T22:41:41Z",
+     "taken_at": "2026-11-16T23:04:01Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/gabriel-dacruz-1366.webp",
-     "bytes": 47424,
+     "bytes": 71068,
      "width": 1366,
      "height": 768
     }
@@ -189,30 +189,80 @@
     "file": "/assets/shots/gabriel-dacruz-thumb.webp",
     "width": 1100,
     "height": 480,
-    "bytes": 21578,
+    "bytes": 26708,
     "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
    },
    "more": [
     {
-     "label": "The Score",
-     "path": "/d/score/",
-     "version_at_capture": "v0.1.6",
+     "label": "The Sleeve",
+     "path": "/d/sleeve/",
+     "version_at_capture": "v0.1.9",
      "shots": {
       "390": {
-       "taken_at": "2026-11-16T22:41:48Z",
+       "taken_at": "2026-11-16T23:04:09Z",
        "viewport": "390x844",
        "console_errors_on_source": 0,
-       "file": "/assets/shots/gabriel-dacruz-score-390.webp",
-       "bytes": 29316,
+       "file": "/assets/shots/gabriel-dacruz-sleeve-390.webp",
+       "bytes": 30574,
        "width": 390,
        "height": 844
       },
       "1366": {
-       "taken_at": "2026-11-16T22:41:45Z",
+       "taken_at": "2026-11-16T23:04:06Z",
+       "viewport": "1366x768",
+       "console_errors_on_source": 0,
+       "file": "/assets/shots/gabriel-dacruz-sleeve-1366.webp",
+       "bytes": 56806,
+       "width": 1366,
+       "height": 768
+      }
+     }
+    },
+    {
+     "label": "The Cue Sheet",
+     "path": "/d/cues/",
+     "version_at_capture": "v0.1.9",
+     "shots": {
+      "390": {
+       "taken_at": "2026-11-16T23:04:14Z",
+       "viewport": "390x844",
+       "console_errors_on_source": 0,
+       "file": "/assets/shots/gabriel-dacruz-cues-390.webp",
+       "bytes": 29612,
+       "width": 390,
+       "height": 844
+      },
+      "1366": {
+       "taken_at": "2026-11-16T23:04:12Z",
+       "viewport": "1366x768",
+       "console_errors_on_source": 0,
+       "file": "/assets/shots/gabriel-dacruz-cues-1366.webp",
+       "bytes": 93384,
+       "width": 1366,
+       "height": 768
+      }
+     }
+    },
+    {
+     "label": "The Score",
+     "path": "/d/score/",
+     "version_at_capture": "v0.1.9",
+     "shots": {
+      "390": {
+       "taken_at": "2026-11-16T23:04:19Z",
+       "viewport": "390x844",
+       "console_errors_on_source": 0,
+       "file": "/assets/shots/gabriel-dacruz-score-390.webp",
+       "bytes": 30306,
+       "width": 390,
+       "height": 844
+      },
+      "1366": {
+       "taken_at": "2026-11-16T23:04:16Z",
        "viewport": "1366x768",
        "console_errors_on_source": 0,
        "file": "/assets/shots/gabriel-dacruz-score-1366.webp",
-       "bytes": 38280,
+       "bytes": 39306,
        "width": 1366,
        "height": 768
       }
@@ -221,23 +271,23 @@
     {
      "label": "The Signal Chain",
      "path": "/d/signal/",
-     "version_at_capture": "v0.1.6",
+     "version_at_capture": "v0.1.9",
      "shots": {
       "390": {
-       "taken_at": "2026-11-16T22:41:52Z",
+       "taken_at": "2026-11-16T23:04:24Z",
        "viewport": "390x844",
        "console_errors_on_source": 0,
        "file": "/assets/shots/gabriel-dacruz-signal-390.webp",
-       "bytes": 20888,
+       "bytes": 19438,
        "width": 390,
        "height": 844
       },
       "1366": {
-       "taken_at": "2026-11-16T22:41:50Z",
+       "taken_at": "2026-11-16T23:04:21Z",
        "viewport": "1366x768",
        "console_errors_on_source": 0,
        "file": "/assets/shots/gabriel-dacruz-signal-1366.webp",
-       "bytes": 39268,
+       "bytes": 40944,
        "width": 1366,
        "height": 768
       }

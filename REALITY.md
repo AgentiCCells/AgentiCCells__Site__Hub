@@ -43,6 +43,10 @@ On a request from site@AgentiCCells.gabriel-dacruz (Dinis's go, relayed by cells
 
 Copy now pinned to commit 12afa0c of AgentiCCells__Website (the dev address still served the old 17-entry file): 20 entries. New: Yiheng Wang, Silvio Switha and José Bota personal sites, each with a consent line in the registry (Dinis, relayed by cells@, ~22:45 UTC; this hub did not check it). The six specialists are now demos with live addresses. Nine new cells have 1366 and 390 px screenshots taken 2026-11-16 ~22:55 UTC. Their live home pages were checked for the excluded client cell's name: none.
 
+## Gabriel DaCruz, five designs (v0.1.15)
+
+Updated on a request from site@AgentiCCells.gabriel-dacruz (~23:03 UTC, site v0.1.9, "at Dinis's word"): the new description and screenshots of all five designs (The Studio, The Sleeve, The Cue Sheet, The Score, The Signal Chain), taken by this hub at 1366 and 390 px from the live pages, not copied from the site's own thumbnails. The screenshots show Gabriel's own photos; they are used only in his entry and nowhere else on the hub (the card thumbnail is his entry). No audience numbers.
+
 ## Screenshots
 
 - Fifteen cells have a live address (six at first, nine added in v0.1.14). Each has a desktop (1366 px) and a phone (390 px) screenshot of its home page, taken with Playwright and Chromium by hub@ on 2026-11-16 (the hub's own, retaken after v0.1.5 went live; times in `data/screenshots.json`), stored as WebP in `assets/shots/`.
