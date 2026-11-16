@@ -1,7 +1,8 @@
 // Page hook: the hub's home page (search, filters, one card per cell) and one page per cell,
 // generated from data/cells-registry.json (a verbatim copy of conductor@'s registry, with its
 // source and date in data/cells-registry.source.json), data/cell-names.json and data/screenshots.json.
-// No database. Every cell is a demo unless the registry says its status is "live".
+// No database. Statuses come from the registry: live, demo, proposed (not built yet), test (a pipeline test run).
+// Every cell is a demo unless the registry says otherwise.
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -13,6 +14,14 @@ const KINDS = {
   specialist: ['Specialist', 'A specialist agent that other teams can bring in for one kind of work.'],
   'factory-test': ['Factory test', 'A test run of the factory pipeline, kept as a record.'],
 };
+const STATUS = {
+  live: ['Live', 'Sells or serves for real.'],
+  demo: ['Demo', 'Made and running, to show what a cell can do.'],
+  proposed: ['Proposed', 'Described, often in a newsroom article, or with a repository started. Not built yet.'],
+  test: ['Test', 'A factory pipeline test run, kept as a record.'],
+};
+// Cells people can open and look at come first, in this order; the rest follow in registry order.
+const ORDER = ['riskmandate-at-websummit', 'algarve-orange-grower', 'gabriel-dacruz', 'agenticcells-ai', 'agenticcells-site', 'hub'];
 const ASK = 'https://agenticcells.ai';
 const ASK_CELL = 'https://agenticcells.ai/website-cell/';
 
@@ -29,27 +38,56 @@ export default async function (ctx) {
     const name = names[c.id];
     if (!name) throw new Error(`data/cell-names.json: no name for ${c.id}`);
     if (!KINDS[c.kind]) throw new Error(`cells-registry.json: unknown kind ${c.kind} for ${c.id}`);
-    return { ...c, name, kindLabel, kindText, live_status: c.status === 'live' ? 'Live' : 'Demo', path: `/cells/${c.id}/`, shot: shots[c.id] };
+    const st = STATUS[c.status];
+    if (!st) throw new Error(`cells-registry.json: unknown status ${c.status} for ${c.id}`);
+    return { ...c, name, kindLabel, kindText, live_status: st[0], status_text: st[1], path: `/cells/${c.id}/`, shot: shots[c.id] };
+  }).sort((a, b) => {
+    const ia = ORDER.indexOf(a.id), ib = ORDER.indexOf(b.id);
+    return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
   });
+
+  // Versions: read each live address's own /version.json when the page is built; fall back to the registry's.
+  const readOn = new Date().toISOString().slice(0, 10);
+  for (const c of cells) {
+    c.version = null; c.version_from = null;
+    if (c.live) {
+      try {
+        const r = await fetch(`${c.live}/version.json`, { signal: AbortSignal.timeout(15000) });
+        const v = r.ok ? (await r.json()).version : null;
+        if (typeof v === 'string' && /^v?\d+\.\d+\.\d+$/.test(v)) { c.version = v; c.version_from = 'live'; }
+      } catch { /* fall back below */ }
+    }
+    if (!c.version && c.version_seen) { c.version = c.version_seen; c.version_from = 'registry'; }
+  }
   const day = (iso) => iso.slice(0, 10);
   const link = (u) => `<a href="${esc(u)}">${esc(u)}</a>`;
   const repoName = (u) => u.replace('https://github.com/', '');
-  const versionText = (c) => c.version_seen ? `${c.version_seen}, seen ${src.registry_checked.slice(0, 10)}` : 'No version yet';
+  const versionText = (c) => !c.version ? 'No version yet'
+    : c.version_from === 'live' ? `${c.version}, read from its own version.json on ${readOn}, when this page was built; the live site may have moved on`
+    : `${c.version}, from the registry (checked ${src.registry_checked.slice(0, 16)} UTC); the live address could not be read when this page was built`;
 
   const alt = (c, w) => `Screenshot of the home page of ${c.name} at ${w} pixels wide, taken ${day(c.shot.shots[w].taken_at)}`;
-  const preview = (c) => c.shot
-    ? `<img src="${esc(c.shot.shots[1366].file)}" width="${c.shot.shots[1366].width}" height="${c.shot.shots[1366].height}" alt="${esc(alt(c, 1366))}" loading="lazy">`
-    : `<span class="noshot" aria-hidden="true">${esc(c.kindLabel)}</span><span class="visually-hidden">No screenshot: this cell has no live address.</span>`;
+  const preview = (c) => `<img src="${esc(c.shot.thumb.file)}" width="${c.shot.thumb.width}" height="${c.shot.thumb.height}" alt="${esc(alt(c, 1366))}" loading="lazy">`;
 
   const kindCounts = Object.keys(KINDS).map((k) => [k, cells.filter((c) => c.kind === k).length]).filter(([, n]) => n);
 
-  const card = (c) => `<li class="cell-card" data-kind="${esc(c.kind)}" data-status="${esc(c.live_status.toLowerCase())}" data-text="${esc([c.name, c.id, c.what, c.kindLabel, c.live_status].join(' ').toLowerCase())}">
+  const dataAttrs = (c) => `data-kind="${esc(c.kind)}" data-status="${esc(c.status)}" data-live="${c.live ? 'yes' : 'no'}" data-text="${esc([c.name, c.id, c.what, c.kindLabel, c.live_status].join(' ').toLowerCase())}"`;
+  const tags = (c) => `<span class="tag">${esc(c.kindLabel)}</span> <span class="tag is-${esc(c.status)}">${esc(c.live_status)}</span>`;
+  const card = (c) => `<li class="cell-card" ${dataAttrs(c)}>
 <a class="preview" href="${esc(c.path)}" tabindex="-1" aria-hidden="true">${preview(c)}</a>
-<div class="body"><p class="tags"><span class="tag">${esc(c.kindLabel)}</span> <span class="tag ${c.live_status === 'Live' ? 'is-live' : 'is-demo'}">${esc(c.live_status)}</span></p>
-<h3><a href="${esc(c.path)}">${esc(c.name)}</a></h3>
+<div class="body"><p class="tags">${tags(c)}</p>
+<h3><a class="title" href="${esc(c.path)}">${esc(c.name)}</a></h3>
 <p>${esc(c.what)}</p>
-<p class="meta"><small>${c.live ? esc(c.live.replace('https://', '')) : 'No live address'} · ${esc(c.version_seen || 'no version')}</small></p></div>
+<p class="meta"><small>${esc(c.live.replace('https://', ''))} · ${esc(c.version || 'no version')}</small></p></div>
 </li>`;
+  const row = (c) => `<li class="cell-row" ${dataAttrs(c)}><a class="title" href="${esc(c.path)}">${esc(c.name)}</a> <span class="tags">${tags(c)}</span><span class="what">${esc(c.what)}</span></li>`;
+  const withAddr = cells.filter((c) => c.live && c.shot);
+  const parts = cells.filter((c) => !(c.live && c.shot) && (c.status === 'demo' || c.status === 'live'));
+  const proposed = cells.filter((c) => c.status === 'proposed');
+  const tests = cells.filter((c) => c.status === 'test');
+  const orphan = cells.filter((c) => ![...withAddr, ...parts, ...proposed, ...tests].includes(c));
+  if (orphan.length) throw new Error(`cells not placed on the home page: ${orphan.map((c) => c.id).join(', ')}`);
+  const statusCounts = Object.keys(STATUS).map((k) => [k, cells.filter((c) => c.status === k).length]).filter(([, n]) => n);
 
   const index = {
     path: '/',
@@ -60,24 +98,37 @@ export default async function (ctx) {
     bodyclass: 'wide',
     script: '/assets/hub.js',
     html: `<h1>Find a cell</h1>
-<p class="lede">Every cell AgentiCCells has made, in one place: a page for each with screenshots, what it does, where it runs, its repository, its version and how to copy it. Every cell here is a <strong>demo</strong> unless its card says <em>Live</em>. This hub lists; it does not sell. For consultancy and the four ways to start, see <a href="${ASK}">agenticcells.ai</a>.</p>
+<p class="lede">The cells AgentiCCells has made, with screenshots and how to copy them. We list; we do not sell. Consultancy: <a href="${ASK}">agenticcells.ai</a>.</p>
 <form class="filters" id="filters" role="search" aria-label="Find a cell" onsubmit="return false">
-<div><label for="q">Search</label><input id="q" type="search" name="q" autocomplete="off" placeholder="Name, kind or what it does"></div>
+<div class="f-q"><label for="q">Search</label><input id="q" type="search" name="q" autocomplete="off" placeholder="Name, kind or what it does"></div>
+<details class="f-more" id="fmore"><summary>Filters</summary><div class="f-grid">
 <div><label for="kind">Kind</label><select id="kind" name="kind"><option value="">All kinds (${cells.length})</option>${kindCounts.map(([k, n]) => `<option value="${esc(k)}">${esc(KINDS[k][0])} (${n})</option>`).join('')}</select></div>
-<div><label for="status">Status</label><select id="status" name="status"><option value="">Demo and live</option><option value="demo">Demo</option><option value="live">Live</option></select></div>
+<div><label for="status">Status</label><select id="status" name="status"><option value="">All statuses</option>${statusCounts.map(([k, n]) => `<option value="${esc(k)}">${esc(STATUS[k][0])} (${n})</option>`).join('')}</select></div>
 <div><label for="where">Address</label><select id="where" name="where"><option value="">With or without</option><option value="yes">Has a live address</option></select></div>
+</div></details>
 </form>
 <p id="count" class="count" role="status" aria-live="polite">${cells.length} cells</p>
 <ul class="cell-grid" id="grid">
-${cells.map((c) => card(c).replace('<li class="cell-card"', `<li class="cell-card" data-live="${c.live ? 'yes' : 'no'}"`)).join('\n')}
+${withAddr.map(card).join('\n')}
 </ul>
+<section id="sec-parts"><h2>Parts</h2><p>Parts the cells are made from. They have no address to open.</p><ul class="cell-rows">
+${parts.map(row).join('\n')}
+</ul></section>
+<section id="sec-proposed"><h2>Proposed, not built yet</h2><p>Described in a newsroom article, or with a repository started. Nothing to try yet.</p><ul class="cell-rows">
+${proposed.map(row).join('\n')}
+</ul></section>
+<details class="tests" id="sec-tests"><summary>Parts and tests: factory pipeline test runs (${tests.length})</summary><ul class="cell-rows">
+${tests.map(row).join('\n')}
+</ul></details>
 <p id="none" class="count" hidden>No cell matches. Clear the search or choose another kind.</p>
 <h2>How to read this page</h2>
 <ul>
-<li><strong>Demo</strong> means we made it to show what a cell can do. Prices, people and orders in a demo can be invented, and each demo says so itself.</li>
-<li><strong>Live</strong> means the registry says it runs for real.</li>
+<li><strong>Demo</strong> means we made it and it runs, to show what a cell can do. Prices, people and orders in a demo can be invented, and each demo says so itself. Every cell is a demo unless it says otherwise.</li>
+<li><strong>Live</strong> means the registry says it serves or sells for real.</li>
+<li><strong>Proposed</strong> means it is described, often in a newsroom article, or its repository is started, but it is not built.</li>
+<li><strong>Test</strong> means a factory pipeline test run, kept as a record.</li>
 <li>Screenshots are snapshots with the date they were taken. The site may have changed since.</li>
-<li>Versions are the ones seen on ${esc(src.registry_checked)}, as recorded in the registry. They are not live readings.</li>
+<li>Versions are read from each live address's own version.json when the hub is built (the date is on each cell page), so they can be behind the live site. Cells with no address show the registry's value.</li>
 </ul>
 <p><a href="/publish/">How to find, copy or ask for a cell like one of these.</a></p>
 <h2>Where this list comes from</h2>
@@ -92,24 +143,29 @@ ${cells.map((c) => card(c).replace('<li class="cell-card"', `<li class="cell-car
 <figure class="phone"><img src="${esc(s.shots[390].file)}" width="${s.shots[390].width}" height="${s.shots[390].height}" alt="${esc(alt(c, 390))}"><figcaption>Phone, 390 pixels wide. Taken ${esc(s.shots[390].taken_at.replace('T', ' ').replace('Z', ' UTC'))}.</figcaption></figure>
 </div>` : `<h2>Screenshots</h2>
 <p>None. This cell has no live address, so there is nothing to photograph. Its repository is the place to look.</p>`;
-    const demo = c.live_status === 'Demo' ? '<p class="note"><strong>Demo.</strong> We made this to show what a cell can do. Anything it says about prices, people or orders may be invented, and the cell says so itself.</p>' : '';
+    const notes = {
+      demo: '<p class="note"><strong>Demo.</strong> We made this to show what a cell can do. Anything it says about prices, people or orders may be invented, and the cell says so itself.</p>',
+      proposed: '<p class="note"><strong>Proposed, not built yet.</strong> This cell is described, often in a newsroom article, or its repository has only been started. There is nothing to try. Treat the repository as a starting point at most.</p>',
+      test: '<p class="note"><strong>Test run.</strong> A factory pipeline test, kept as a record. It is not a cell to copy.</p>',
+    };
+    const demo = notes[c.status] || '';
     return {
       path: c.path,
       title: `${c.name}: ${c.kindLabel.toLowerCase()} on the AgentiCCells hub`,
       description: `${c.name}: ${c.what} ${c.live_status} ${c.kindLabel.toLowerCase()}, with its repository, version and how to copy it.`.slice(0, 300),
       html: `<p class="crumb"><a href="/">All cells</a></p>
 <h1>${esc(c.name)}</h1>
-<p class="tags"><span class="tag">${esc(c.kindLabel)}</span> <span class="tag ${c.live_status === 'Live' ? 'is-live' : 'is-demo'}">${esc(c.live_status)}</span></p>
+<p class="tags">${tags(c)}</p>
 <p class="lede">${esc(c.what)}</p>
 ${demo}
 ${shotHtml}
 <h2>Details</h2>
 <div class="table-wrap"><table><tbody>
 <tr><th scope="row">Kind</th><td>${esc(c.kindLabel)}. ${esc(c.kindText)}</td></tr>
-<tr><th scope="row">Status</th><td>${esc(c.live_status)}${c.live_status === 'Demo' ? ' (not a paid or production cell)' : ''}</td></tr>
+<tr><th scope="row">Status</th><td>${esc(c.live_status)}. ${esc(c.status_text)}</td></tr>
 <tr><th scope="row">Live address</th><td>${c.live ? link(c.live) : 'None. It is not served as a website.'}</td></tr>
 <tr><th scope="row">Repository</th><td>${link(c.repository)}</td></tr>
-<tr><th scope="row">Version</th><td>${esc(versionText(c))}. Source: the registry, not a live reading.</td></tr>
+<tr><th scope="row">Version</th><td>${esc(versionText(c))}.</td></tr>
 <tr><th scope="row">Licence</th><td>See the LICENSE file in the repository. The team's own rule is code under Apache-2.0 and text and images under CC BY 4.0, but the file is what counts.</td></tr>
 <tr><th scope="row">Listing</th><td>Listed with its owner's consent. Registry copied ${esc(src.copied_on)}.</td></tr>
 </tbody></table></div>

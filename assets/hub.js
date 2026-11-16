@@ -3,7 +3,10 @@
 (function () {
   var grid = document.getElementById('grid');
   if (!grid) return;
-  var cards = Array.prototype.slice.call(grid.children);
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.cell-card, .cell-row'));
+  var secs = ['sec-parts', 'sec-proposed', 'sec-tests'].map(function (i) { return document.getElementById(i); });
+  var fmore = document.getElementById('fmore');
+  if (fmore && window.matchMedia('(min-width: 48rem)').matches) fmore.open = true;
   var q = document.getElementById('q'), kind = document.getElementById('kind'), status = document.getElementById('status'), where = document.getElementById('where');
   var count = document.getElementById('count'), none = document.getElementById('none');
   var params = new URLSearchParams(location.search);
@@ -19,6 +22,13 @@
       c.hidden = !ok;
       if (ok) shown++;
     });
+    var active = !!(q.value || kind.value || status.value || where.value);
+    secs.forEach(function (sec) {
+      var n = sec.querySelectorAll('.cell-row:not([hidden])').length;
+      sec.hidden = n === 0;
+      if (sec.tagName === 'DETAILS') sec.open = active && n > 0;
+    });
+    if (active && fmore && (kind.value || status.value || where.value)) fmore.open = true;
     count.textContent = shown === cards.length ? cards.length + ' cells' : 'Showing ' + shown + ' of ' + cards.length + ' cells';
     none.hidden = shown !== 0;
     var p = new URLSearchParams();

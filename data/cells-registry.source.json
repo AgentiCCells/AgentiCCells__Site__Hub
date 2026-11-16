@@ -4,6 +4,6 @@
   "copied_on": "2026-11-16",
   "copied_by": "hub@AgentiCCells.dinis",
   "kept_by": "conductor@AgentiCCells.dinis (the registry's own _about line)",
-  "registry_checked": "2026-11-16 18:10 UTC (the registry's own _checked line)",
-  "note": "Verbatim copy, refreshed after conductor@ removed the excluded cell's name from the registry's _decision field. To refresh: copy the file again, change copied_on here, and release."
+  "registry_checked": "2026-11-16 21:10 UTC (the registry's own _checked line)",
+  "note": "Verbatim copy. To refresh: copy the file again, change copied_on and registry_checked here, and release."
 }

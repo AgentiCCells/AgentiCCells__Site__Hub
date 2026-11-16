@@ -24,6 +24,13 @@
      "width": 1366,
      "height": 768
     }
+   },
+   "thumb": {
+    "file": "/assets/shots/agenticcells-ai-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 27066,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
    }
   },
   {
@@ -49,6 +56,13 @@
      "width": 1366,
      "height": 768
     }
+   },
+   "thumb": {
+    "file": "/assets/shots/agenticcells-site-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 20462,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
    }
   },
   {
@@ -74,6 +88,13 @@
      "width": 1366,
      "height": 768
     }
+   },
+   "thumb": {
+    "file": "/assets/shots/hub-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 34520,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
    }
   },
   {
@@ -99,6 +120,13 @@
      "width": 1366,
      "height": 768
     }
+   },
+   "thumb": {
+    "file": "/assets/shots/riskmandate-at-websummit-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 23830,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
    }
   },
   {
@@ -124,6 +152,13 @@
      "width": 1366,
      "height": 768
     }
+   },
+   "thumb": {
+    "file": "/assets/shots/algarve-orange-grower-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 69424,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
    }
   },
   {
@@ -149,6 +184,13 @@
      "width": 1366,
      "height": 768
     }
+   },
+   "thumb": {
+    "file": "/assets/shots/gabriel-dacruz-thumb.webp",
+    "width": 1100,
+    "height": 480,
+    "bytes": 28280,
+    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
    }
   }
  ]

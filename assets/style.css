@@ -139,3 +139,26 @@ td,th{overflow-wrap:anywhere}
 .ways li{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:.75rem 1rem}
 .ways p{margin:.4rem 0 0}
 .way-name{font-weight:700;margin-right:.5rem}
+
+/* v0.1.8: reviewer fixes (phone first screen, thumbnails, tap targets, statuses). */
+.cell-card .preview{aspect-ratio:1100/480}
+ul.cell-grid{grid-template-columns:repeat(auto-fill,minmax(19rem,1fr))}
+.cell-card .title,.cell-row .title,.crumb a{display:inline-flex;align-items:center;min-height:2.75rem}
+.cell-card h3{margin:.1rem 0 .2rem}
+.tag.is-proposed{border-style:dashed}
+.tag.is-test{border-style:dotted}
+.tag{min-height:1.5rem}
+.filters{display:block;margin:.5rem 0}
+.f-q{margin-bottom:.5rem}
+.f-more summary{display:inline-flex;align-items:center;min-height:2.75rem;padding:0 .9rem;border:1px solid var(--line);border-radius:var(--radius);font-weight:600;cursor:pointer;list-style:none}
+.f-more summary::-webkit-details-marker{display:none}
+.f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:.75rem;margin-top:.75rem}
+@media (min-width:48rem){.f-q{max-width:28rem}}
+ul.cell-rows{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
+.cell-row{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:.2rem 1rem .6rem}
+.cell-row[hidden],section[hidden],details.tests[hidden]{display:none}
+.cell-row .tags{margin-left:.5rem}
+.cell-row .what{display:block;color:var(--muted);font-size:.9375rem}
+details.tests{margin:1.5rem 0}
+details.tests summary{cursor:pointer;min-height:2.75rem;display:flex;align-items:center;font-weight:600}
+@media (max-width:47.99rem){.lede{font-size:1.0625rem}}

@@ -122,9 +122,11 @@ try {
     const pf = join(root, 'site/cells', c.id, 'index.html');
     if (!existsSync(pf)) { fail(`registry: no built page for ${c.id}`); continue; }
     const pg = readFileSync(pf, 'utf8');
-    const want = c.status === 'live' ? 'Live' : 'Demo';
-    if (!new RegExp(`class="tag[^"]*">${want}</span>`).test(pg)) fail(`site/cells/${c.id}: must be marked ${want}`);
-    if (c.status !== 'live' && /class="tag is-live"/.test(pg)) fail(`site/cells/${c.id}: marked live but the registry does not say live`);
+    const want = { live: 'Live', demo: 'Demo', proposed: 'Proposed', test: 'Test' }[c.status];
+    if (!want) { fail(`registry: ${c.id} has unknown status ${c.status}`); continue; }
+    if (!new RegExp(`class="tag is-${c.status}">${want}</span>`).test(pg)) fail(`site/cells/${c.id}: must be marked ${want}`);
+    if (c.status !== 'demo' && /class="tag is-demo"/.test(pg)) fail(`site/cells/${c.id}: marked Demo but the registry says ${c.status}`);
+    if (c.status !== 'live' && /class="tag is-live">Live/.test(pg)) fail(`site/cells/${c.id}: marked live but the registry does not say live`);
     if (!builtIndex.includes(`href="/cells/${c.id}/"`)) fail(`site/index.html: no card for ${c.id}`);
     // Five ways to make it yours: a real fork link, the ask link, and the three unbuilt ways marked Planned (no invented deploy buttons).
     if (!pg.includes(`href="${c.repository}/fork"`)) fail(`site/cells/${c.id}: no fork link`);
@@ -137,6 +139,7 @@ try {
         if (!s || !s.shots[w] || !/^\d{4}-\d{2}-\d{2}T/.test(s.shots[w].taken_at || '')) fail(`data/screenshots.json: ${c.id} needs a ${w} px screenshot with taken_at`);
         else if (!existsSync(join(root, s.shots[w].file.slice(1)))) fail(`data/screenshots.json: ${s.shots[w].file} missing`);
       }
+      if (s && s.thumb && !existsSync(join(root, s.thumb.file.slice(1)))) fail(`data/screenshots.json: ${s.thumb.file} missing`);
       if (!pg.includes('<img ')) fail(`site/cells/${c.id}: has a live address but shows no screenshot`);
     }
   }
