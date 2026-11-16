@@ -125,7 +125,7 @@ ul.cell-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-colum
 .cell-card p{margin:0 0 .4rem}
 .tags{margin:0 0 .25rem}
 .tag{display:inline-block;font-size:.8125rem;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:.05rem .6rem;color:var(--fg);background:var(--bg)}
-.tag.is-live{border-color:var(--accent);color:var(--accent)}
+.tag.is-works,.tag.is-live{border-color:var(--accent);color:var(--accent)}
 .crumb{margin:.5rem 0 0;font-size:.9375rem}
 .note{background:var(--surface);border-left:4px solid var(--accent);padding:.6rem .9rem;border-radius:var(--radius)}
 .shots{display:grid;gap:1rem;grid-template-columns:1fr}
@@ -135,3 +135,7 @@ ul.cell-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-colum
 @media (min-width:48rem){.shots{grid-template-columns:3fr 1fr;align-items:start}}
 td,th{overflow-wrap:anywhere}
 .steps li,.lede,.note{overflow-wrap:anywhere}
+.ways{list-style:none;padding:0;display:grid;gap:.75rem}
+.ways li{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:.75rem 1rem}
+.ways p{margin:.4rem 0 0}
+.way-name{font-weight:700;margin-right:.5rem}

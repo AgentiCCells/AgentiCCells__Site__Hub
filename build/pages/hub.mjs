@@ -14,6 +14,7 @@ const KINDS = {
   'factory-test': ['Factory test', 'A test run of the factory pipeline, kept as a record.'],
 };
 const ASK = 'https://agenticcells.ai';
+const ASK_CELL = 'https://agenticcells.ai/website-cell/';
 
 export default async function (ctx) {
   const { root, esc } = ctx;
@@ -112,6 +113,15 @@ ${shotHtml}
 <tr><th scope="row">Licence</th><td>See the LICENSE file in the repository. The team's own rule is code under Apache-2.0 and text and images under CC BY 4.0, but the file is what counts.</td></tr>
 <tr><th scope="row">Listing</th><td>Listed with its owner's consent. Registry copied ${esc(src.copied_on)}.</td></tr>
 </tbody></table></div>
+<h2>Five ways to make it yours</h2>
+<p>From Dinis Cruz, <a href="https://newsroom.sgit.ai/articles/fork-it.html">Fork it</a> (newsroom, 2026-11-16). Two work today. Three are planned and are not built: nothing below pretends otherwise.</p>
+<ul class="ways">
+<li><span class="way-name">1. Fork on GitHub</span> <span class="tag is-works">Works today</span><p><a class="button" href="${esc(c.repository)}/fork">Fork ${esc(repoName(c.repository))}</a></p><p><small>The standard GitHub fork link. It works for a public repository; if the repository is private, GitHub will refuse it. This cell is not yet built to be forked by a stranger: it may carry our team's settings and rules, so expect to change things after you fork.</small></p></li>
+<li><span class="way-name">2. Deploy in one click</span> <span class="tag">Planned</span><p>Not built. There is no deploy button for this cell yet.</p></li>
+<li><span class="way-name">3. Run in your assistant</span> <span class="tag">Planned</span><p>Not built. There is no ready-made way to run this cell inside an assistant yet.</p></li>
+<li><span class="way-name">4. Take it as a vault</span> <span class="tag">Planned</span><p>Not built. This cell has no vault download yet.</p></li>
+<li><span class="way-name">5. Ask us</span> <span class="tag is-works">Works today</span><p><a class="button" href="${ASK_CELL}">Ask us to make one like it</a></p><p><small>Goes to agenticcells.ai, where the cell is described. This hub gives no prices.</small></p></li>
+</ul>
 <h2>How to find it</h2>
 <ol class="steps">
 <li>${c.live ? `Open the live address: ${link(c.live)}.` : 'It has no live address. Start from its repository.'}</li>

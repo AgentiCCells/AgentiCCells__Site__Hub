@@ -23,6 +23,14 @@ The hub is a catalogue of the cells AgentiCCells has made. It lists them and sho
 
 Sites are static files, so a copy opens locally without a server.
 
+## Five ways to make a cell yours
+
+Every cell page lists the five ways from Dinis Cruz's article [Fork it](https://newsroom.sgit.ai/articles/fork-it.html): fork on GitHub, deploy in one click, run in your assistant, take it as a vault, and ask us. Today two work: the GitHub fork link, and asking us at [agenticcells.ai](https://agenticcells.ai/website-cell/). The other three are planned and not built, and each page says so.
+
+## Paths
+
+Planned, not built. The idea in the same article is a path from one repository to the next: start with one, fork the next, then add a cell. There are no paths on the hub yet.
+
 ## Ask for one like it
 
 Ask the AgentiCCells team through [agenticcells.ai](https://agenticcells.ai). This hub gives no prices and takes no orders.

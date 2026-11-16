@@ -126,6 +126,11 @@ try {
     if (!new RegExp(`class="tag[^"]*">${want}</span>`).test(pg)) fail(`site/cells/${c.id}: must be marked ${want}`);
     if (c.status !== 'live' && /class="tag is-live"/.test(pg)) fail(`site/cells/${c.id}: marked live but the registry does not say live`);
     if (!builtIndex.includes(`href="/cells/${c.id}/"`)) fail(`site/index.html: no card for ${c.id}`);
+    // Five ways to make it yours: a real fork link, the ask link, and the three unbuilt ways marked Planned (no invented deploy buttons).
+    if (!pg.includes(`href="${c.repository}/fork"`)) fail(`site/cells/${c.id}: no fork link`);
+    if (!pg.includes('href="https://agenticcells.ai/website-cell/"')) fail(`site/cells/${c.id}: no ask-us link`);
+    if ((pg.match(/<span class="tag">Planned<\/span>/g) || []).length !== 3) fail(`site/cells/${c.id}: the three unbuilt ways must each be marked Planned`);
+    if (/netlify|vercel|pages\.dev|deploy\.cloudflare/i.test(pg.replace(/Netlify, Vercel/g, ''))) fail(`site/cells/${c.id}: a deploy link or service is named that does not exist yet`);
     if (c.live) {
       const s = shots.find((x) => x.id === c.id);
       for (const w of ['1366', '390']) {
