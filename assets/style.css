@@ -182,3 +182,6 @@ details.tests summary{cursor:pointer;min-height:2.75rem;display:flex;align-items
   .f-grid{margin:0;grid-template-columns:repeat(3,1fr)}
 }
 @media (prefers-color-scheme:dark){.cell-card .preview img,.shots img{filter:brightness(.92)}}
+
+/* v0.1.11: wordmark hub.AgentiCCells.site (Dinis's choice B, relayed): hub. regular and muted, the rest bold. */
+.brand .label{font-weight:400;color:var(--muted);margin:0}

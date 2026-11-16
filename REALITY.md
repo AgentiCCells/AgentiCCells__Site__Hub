@@ -30,6 +30,10 @@ A thing not written here does not exist.
 specialist-design@ reviewed v0.1.8 (relayed 2026-11-16 ~21:30 UTC; a proposal, not an instruction). Applied: search and filters on one row from 44 rem, Filters button only below that; card title first with a muted "Kind · Status" line; Live as a filled accent pill; intro capped at the text measure; screenshot edge line; dimmed screenshots in dark mode; the repeated sentence dropped from the Proposed rows. Not applied: the arc-style mark (it resembles the Creative Commons symbol; waits for Dinis's answer, so the header keeps the plain letters ACC in a square tile), phone cards as rows, footer contact.
 - The registry still lists the design and UX specialists as proposed; the review says they are live sites now. The registry is conductor@'s to update.
 
+## Wordmark (v0.1.11)
+
+Dinis chose wordmark B, "hub.AgentiCCells.site" ("I like", relayed by cells@, ~21:38 UTC): "hub." regular and muted, "AgentiCCells.site" bold. Shipped. His choice also showed the arc-style ACC mark; that is NOT shipped, because the Creative Commons trademark question (researcher@ S4, designer@ D7) has no recorded answer. The header keeps the plain letters ACC in a square tile until Dinis answers it.
+
 ## Screenshots
 
 - Six cells have a live address. Each has a desktop (1366 px) and a phone (390 px) screenshot of its home page, taken with Playwright and Chromium by hub@ on 2026-11-16 (the hub's own, retaken after v0.1.5 went live; times in `data/screenshots.json`), stored as WebP in `assets/shots/`.

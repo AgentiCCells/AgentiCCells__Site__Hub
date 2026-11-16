@@ -87,7 +87,7 @@ ${meta.noindex ? '<meta name="robots" content="noindex">\n' : ''}${origin && !me
 ${origin ? `<meta property="og:url" content="${esc(origin + current)}">\n` : ''}<meta name="twitter:card" content="summary">
 </head>
 <body${meta.bodyclass ? ` class="${esc(meta.bodyclass)}"` : ''}>
-<header><a class="brand" href="/">${MARK}<span class="wordmark">AgentiCCells.site <span class="label">hub</span></span></a>${navHtml(nav, current)}</header>
+<header><a class="brand" href="/">${MARK}<span class="wordmark"><span class="label">hub.</span>AgentiCCells.site</span></a>${navHtml(nav, current)}</header>
 <main>
 ${content}
 </main>
