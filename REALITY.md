@@ -21,6 +21,10 @@ A thing not written here does not exist.
 - Paths (start here, then fork that, then add this cell) are planned, not built: only a Paths paragraph on /publish/ says so.
 - The cells are not fork-ready for strangers yet (the article says so of the site template); each fork row says to expect changes.
 
+## Name and mark (v0.1.9)
+
+- On a relayed, cut-off message from Dinis ("the logo should be ACC with ...", relayed by cells@, 2026-11-16 ~21:30 UTC) the header mark is now "ACC" in a teal rounded box (also the favicon) and the name reads "AgentiCCells.site" with "hub" as a label. This is my reading of a truncated sentence: it needs Dinis's confirmation. No design specialist input had reached this session when it was made; the wider look of the hub is unchanged.
+
 ## Screenshots
 
 - Six cells have a live address. Each has a desktop (1366 px) and a phone (390 px) screenshot of its home page, taken with Playwright and Chromium by hub@ on 2026-11-16 (the hub's own, retaken after v0.1.5 went live; times in `data/screenshots.json`), stored as WebP in `assets/shots/`.

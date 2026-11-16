@@ -162,3 +162,6 @@ ul.cell-rows{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
 details.tests{margin:1.5rem 0}
 details.tests summary{cursor:pointer;min-height:2.75rem;display:flex;align-items:center;font-weight:600}
 @media (max-width:47.99rem){.lede{font-size:1.0625rem}}
+
+.brand .label{font-weight:500;color:var(--muted);margin-left:.15rem}
+@media (max-width:30rem){.brand{font-size:1rem;gap:.4rem}.brand .mark{width:36px;height:24px}header{flex-wrap:nowrap}}

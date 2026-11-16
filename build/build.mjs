@@ -59,7 +59,7 @@ function markdown(body) {
 
 // The site nav: every page with a `nav:` number in its front matter (or returned
 // by a page hook), in that number's order. Pages without one stay out of the nav.
-const MARK = '<svg class="mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><path d="M17 6.5A10.5 10.5 0 1 0 17 25.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" opacity=".45"/><path d="M25 9.5A10.5 10.5 0 1 0 25 22.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/></svg>';
+const MARK = '<svg class="mark" viewBox="0 0 48 32" width="42" height="28" role="img" aria-label="ACC" focusable="false"><rect width="48" height="32" rx="6" fill="currentColor"/><text x="24" y="22.5" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif" font-size="15.5" font-weight="800" letter-spacing=".4" fill="var(--on-accent)">ACC</text></svg>';
 // Every nav page is a primary link, labelled by `navlabel` (front matter or hook) or else its title.
 function navList(items, current) {
   return items.map((n) => `<li><a href="${esc(n.url)}"${n.url === current ? ' aria-current="page"' : ''}>${esc(n.label || n.title)}</a></li>`).join('');
@@ -87,7 +87,7 @@ ${meta.noindex ? '<meta name="robots" content="noindex">\n' : ''}${origin && !me
 ${origin ? `<meta property="og:url" content="${esc(origin + current)}">\n` : ''}<meta name="twitter:card" content="summary">
 </head>
 <body${meta.bodyclass ? ` class="${esc(meta.bodyclass)}"` : ''}>
-<header><a class="brand" href="/">${MARK}<span>AgentiCCells hub</span></a>${navHtml(nav, current)}</header>
+<header><a class="brand" href="/">${MARK}<span class="wordmark">AgentiCCells.site <span class="label">hub</span></span></a>${navHtml(nav, current)}</header>
 <main>
 ${content}
 </main>
