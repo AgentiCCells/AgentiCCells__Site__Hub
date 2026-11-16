@@ -14,7 +14,7 @@ A thing not written here does not exist.
 
 ## Screenshots
 
-- Six cells have a live address. Each has a desktop (1366 px) and a phone (390 px) screenshot of its home page, taken with Playwright and Chromium by hub@ on 2026-11-16 (times in `data/screenshots.json`), stored as WebP in `assets/shots/`. The hub's own screenshot shows the hub as it was before this release.
+- Six cells have a live address. Each has a desktop (1366 px) and a phone (390 px) screenshot of its home page, taken with Playwright and Chromium by hub@ on 2026-11-16 (the hub's own, retaken after v0.1.5 went live; times in `data/screenshots.json`), stored as WebP in `assets/shots/`.
 - Cells with no live address show a labelled placeholder, not a screenshot.
 - To retake: see `data/screenshots.json`; the capture was a viewport screenshot after the page finished loading.
 

@@ -54,23 +54,23 @@
   {
    "id": "hub",
    "source": "https://hub.agenticcells.site",
-   "version_at_capture": "v0.1.4",
+   "version_at_capture": "v0.1.5",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T18:08:21Z",
+     "taken_at": "2026-11-16T18:14:35Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
      "file": "/assets/shots/hub-390.webp",
-     "bytes": 33946,
+     "bytes": 26154,
      "width": 390,
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T18:08:19Z",
+     "taken_at": "2026-11-16T18:14:32Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/hub-1366.webp",
-     "bytes": 42672,
+     "bytes": 64230,
      "width": 1366,
      "height": 768
     }
