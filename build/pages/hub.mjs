@@ -160,6 +160,9 @@ ${more}` : `<h2>Screenshots</h2>
     const demo = notes[c.status] || '';
     return {
       path: c.path,
+      image: s ? `/assets/og/${c.id}.jpg` : '/assets/og/home.jpg',
+      imageAlt: s ? alt(c, 1366) : 'AgentiCCells hub: the ACC mark and hub.AgentiCCells.site',
+      ogdescription: c.what,
       title: `${c.name}: ${c.kindLabel.toLowerCase()} on the AgentiCCells hub`,
       description: `${c.name}: ${c.what} ${c.live_status} ${c.kindLabel.toLowerCase()}, with its repository, version and how to copy it.`.slice(0, 300),
       html: `<p class="crumb"><a href="/">All cells</a></p>

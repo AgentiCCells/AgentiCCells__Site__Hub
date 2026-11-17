@@ -168,5 +168,46 @@ try {
   }
 }
 
+// Link previews (Open Graph and Twitter card) on every built page: all tags present, the og description 110 to 150
+// characters, and an og:image that is an absolute https address of a JPEG in the built site, 1200x630, under 300 KB.
+{
+  const cname = readFileSync(join(root, 'CNAME'), 'utf8').trim();
+  const meta = (t, attr, key) => (t.match(new RegExp(`<meta ${attr}="${key}" content="([^"]*)"`)) || [])[1];
+  const jpegSize = (buf) => {
+    if (buf[0] !== 0xff || buf[1] !== 0xd8) return null;
+    for (let i = 2; i < buf.length - 9;) {
+      if (buf[i] !== 0xff) { i++; continue; }
+      const m = buf[i + 1];
+      if (m >= 0xc0 && m <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(m)) return { h: buf.readUInt16BE(i + 5), w: buf.readUInt16BE(i + 7) };
+      i += 2 + buf.readUInt16BE(i + 2);
+    }
+    return null;
+  };
+  for (const f of walk(join(root, 'site'), ['.html'])) {
+    const t = readFileSync(f, 'utf8');
+    const name = rel(f);
+    for (const k of ['og:title', 'og:description', 'og:url', 'og:image', 'og:image:width', 'og:image:height', 'og:image:alt']) if (!meta(t, 'property', k)) fail(`${name}: missing ${k}`);
+    if (!meta(t, 'name', 'twitter:card')) fail(`${name}: missing twitter:card`);
+    else if (meta(t, 'name', 'twitter:card') !== 'summary_large_image') fail(`${name}: twitter:card must be summary_large_image`);
+    for (const k of ['twitter:title', 'twitter:description', 'twitter:image']) if (!meta(t, 'name', k)) fail(`${name}: missing ${k}`);
+    const d = (meta(t, 'property', 'og:description') || '').replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+    if (d && (d.length < 110 || d.length > 150)) fail(`${name}: og:description is ${d.length} characters, want 110 to 150`);
+    if (meta(t, 'property', 'og:locale') !== 'en_GB') fail(`${name}: og:locale must be en_GB`);
+    if (meta(t, 'property', 'og:image:width') !== '1200' || meta(t, 'property', 'og:image:height') !== '630') fail(`${name}: og:image width and height must be 1200 and 630`);
+    const img = meta(t, 'property', 'og:image');
+    if (!img) continue;
+    const m = img.match(new RegExp(`^https://${cname.replace(/\./g, '\\.')}(/[^?#]+\\.jpg)$`));
+    if (!m) { fail(`${name}: og:image is not an absolute https address of a .jpg on ${cname}: ${img}`); continue; }
+    const file = join(root, 'site', m[1]);
+    if (!existsSync(file)) { fail(`${name}: og:image is not in the built site: ${m[1]}`); continue; }
+    const buf = readFileSync(file);
+    if (buf.length > 300 * 1024) fail(`${name}: og:image is ${Math.round(buf.length / 1024)} KB, over 300 KB`);
+    const dim = jpegSize(buf);
+    if (!dim) fail(`${name}: og:image is not a JPEG`);
+    else if (dim.w !== 1200 || dim.h !== 630) fail(`${name}: og:image is ${dim.w}x${dim.h}, want 1200x630`);
+    if (meta(t, 'name', 'twitter:image') !== img) fail(`${name}: twitter:image differs from og:image`);
+  }
+}
+
 if (errors.length) { console.error(errors.join('\n')); console.error(`FAILED (${errors.length})`); process.exit(1); }
 console.log('OK');

@@ -70,6 +70,44 @@ function navHtml(nav, current) {
   return `<nav class="wide" aria-label="Site"><ul>${items}</ul></nav><details class="menu"><summary>Menu</summary><nav aria-label="Site (menu)"><ul>${items}</ul></nav></details>`;
 }
 
+// Link previews (Open Graph and Twitter card). The image is 1200x630, absolute, from this site's own files.
+// The og description is kept between 110 and 150 characters (cut at a word, or padded with a fixed tail).
+const OG_TAIL = ' Screenshots, repository and how to copy it, on the AgentiCCells hub.';
+function ogDescription(text) {
+  let t = String(text || '').replace(/\s+/g, ' ').trim();
+  if (t.length < 110) t = (t + OG_TAIL).trim();
+  if (t.length > 150) {
+    t = t.slice(0, 147);
+    t = t.slice(0, t.lastIndexOf(' ')).replace(/[\s,;:.]+$/, '') + '...';
+  }
+  if (t.length < 110) t = t + ' ' + OG_TAIL.trim().slice(0, 110 - t.length - 1);
+  return t;
+}
+function ogTags(meta, current) {
+  const image = `${origin}${meta.image || '/assets/og/home.jpg'}`;
+  const alt = meta.imageAlt || 'AgentiCCells hub: the ACC mark and hub.AgentiCCells.site';
+  const desc = ogDescription(meta.ogdescription || meta.description);
+  const title = meta.title || '';
+  return [
+    '<meta property="og:type" content="website">',
+    '<meta property="og:site_name" content="AgentiCCells hub">',
+    '<meta property="og:locale" content="en_GB">',
+    `<meta property="og:title" content="${esc(title)}">`,
+    `<meta property="og:description" content="${esc(desc)}">`,
+    origin ? `<meta property="og:url" content="${esc(origin + current)}">` : '',
+    origin ? `<meta property="og:image" content="${esc(image)}">` : '',
+    origin ? '<meta property="og:image:type" content="image/jpeg">' : '',
+    origin ? '<meta property="og:image:width" content="1200">' : '',
+    origin ? '<meta property="og:image:height" content="630">' : '',
+    origin ? `<meta property="og:image:alt" content="${esc(alt)}">` : '',
+    '<meta name="twitter:card" content="summary_large_image">',
+    `<meta name="twitter:title" content="${esc(title)}">`,
+    `<meta name="twitter:description" content="${esc(desc)}">`,
+    origin ? `<meta name="twitter:image" content="${esc(image)}">` : '',
+    origin ? `<meta name="twitter:image:alt" content="${esc(alt)}">` : '',
+  ].filter(Boolean).join('\n');
+}
+
 function page(meta, content, nav = [], current = '') {
   return `<!doctype html>
 <html lang="en-GB">
@@ -80,11 +118,7 @@ function page(meta, content, nav = [], current = '') {
 <meta name="description" content="${esc(meta.description || '')}">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-${meta.noindex ? '<meta name="robots" content="noindex">\n' : ''}${origin && !meta.noindex ? `<link rel="canonical" href="${esc(origin + current)}">\n` : ''}<meta property="og:type" content="website">
-<meta property="og:site_name" content="AgentiCCells hub">
-<meta property="og:title" content="${esc(meta.title || '')}">
-<meta property="og:description" content="${esc(meta.description || '')}">
-${origin ? `<meta property="og:url" content="${esc(origin + current)}">\n` : ''}<meta name="twitter:card" content="summary">
+${meta.noindex ? '<meta name="robots" content="noindex">\n' : ''}${origin && !meta.noindex ? `<link rel="canonical" href="${esc(origin + current)}">\n` : ''}${ogTags(meta, current)}
 </head>
 <body${meta.bodyclass ? ` class="${esc(meta.bodyclass)}"` : ''}>
 <header><a class="brand" href="/">${MARK}<span class="wordmark"><span class="label">hub.</span>AgentiCCells.site</span></a>${navHtml(nav, current)}</header>
