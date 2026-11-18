@@ -164,23 +164,23 @@
   {
    "id": "gabriel-dacruz",
    "source": "https://gabriel-dacruz.agenticcells.site",
-   "version_at_capture": "v0.1.9",
+   "version_at_capture": "v0.1.13",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T23:04:04Z",
+     "taken_at": "2026-11-18T00:59:10Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
      "file": "/assets/shots/gabriel-dacruz-390.webp",
-     "bytes": 31346,
+     "bytes": 23288,
      "width": 390,
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T23:04:01Z",
+     "taken_at": "2026-11-18T00:59:08Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/gabriel-dacruz-1366.webp",
-     "bytes": 71068,
+     "bytes": 36692,
      "width": 1366,
      "height": 768
     }
@@ -189,30 +189,55 @@
     "file": "/assets/shots/gabriel-dacruz-thumb.webp",
     "width": 1100,
     "height": 480,
-    "bytes": 26708,
+    "bytes": 17726,
     "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
    },
    "more": [
     {
-     "label": "The Sleeve",
-     "path": "/d/sleeve/",
-     "version_at_capture": "v0.1.9",
+     "label": "The Studio",
+     "path": "/d/studio/",
+     "version_at_capture": "v0.1.13",
      "shots": {
       "390": {
-       "taken_at": "2026-11-16T23:04:09Z",
+       "taken_at": "2026-11-18T00:59:15Z",
        "viewport": "390x844",
        "console_errors_on_source": 0,
-       "file": "/assets/shots/gabriel-dacruz-sleeve-390.webp",
-       "bytes": 30574,
+       "file": "/assets/shots/gabriel-dacruz-studio-390.webp",
+       "bytes": 31346,
        "width": 390,
        "height": 844
       },
       "1366": {
-       "taken_at": "2026-11-16T23:04:06Z",
+       "taken_at": "2026-11-18T00:59:13Z",
+       "viewport": "1366x768",
+       "console_errors_on_source": 0,
+       "file": "/assets/shots/gabriel-dacruz-studio-1366.webp",
+       "bytes": 71068,
+       "width": 1366,
+       "height": 768
+      }
+     }
+    },
+    {
+     "label": "The Sleeve",
+     "path": "/d/sleeve/",
+     "version_at_capture": "v0.1.13",
+     "shots": {
+      "390": {
+       "taken_at": "2026-11-18T00:59:21Z",
+       "viewport": "390x844",
+       "console_errors_on_source": 0,
+       "file": "/assets/shots/gabriel-dacruz-sleeve-390.webp",
+       "bytes": 30654,
+       "width": 390,
+       "height": 844
+      },
+      "1366": {
+       "taken_at": "2026-11-18T00:59:18Z",
        "viewport": "1366x768",
        "console_errors_on_source": 0,
        "file": "/assets/shots/gabriel-dacruz-sleeve-1366.webp",
-       "bytes": 56806,
+       "bytes": 57138,
        "width": 1366,
        "height": 768
       }
@@ -221,23 +246,23 @@
     {
      "label": "The Cue Sheet",
      "path": "/d/cues/",
-     "version_at_capture": "v0.1.9",
+     "version_at_capture": "v0.1.13",
      "shots": {
       "390": {
-       "taken_at": "2026-11-16T23:04:14Z",
+       "taken_at": "2026-11-18T00:59:25Z",
        "viewport": "390x844",
        "console_errors_on_source": 0,
        "file": "/assets/shots/gabriel-dacruz-cues-390.webp",
-       "bytes": 29612,
+       "bytes": 29758,
        "width": 390,
        "height": 844
       },
       "1366": {
-       "taken_at": "2026-11-16T23:04:12Z",
+       "taken_at": "2026-11-18T00:59:23Z",
        "viewport": "1366x768",
        "console_errors_on_source": 0,
        "file": "/assets/shots/gabriel-dacruz-cues-1366.webp",
-       "bytes": 93384,
+       "bytes": 93642,
        "width": 1366,
        "height": 768
       }
@@ -246,23 +271,23 @@
     {
      "label": "The Score",
      "path": "/d/score/",
-     "version_at_capture": "v0.1.9",
+     "version_at_capture": "v0.1.13",
      "shots": {
       "390": {
-       "taken_at": "2026-11-16T23:04:19Z",
+       "taken_at": "2026-11-18T00:59:30Z",
        "viewport": "390x844",
        "console_errors_on_source": 0,
        "file": "/assets/shots/gabriel-dacruz-score-390.webp",
-       "bytes": 30306,
+       "bytes": 28876,
        "width": 390,
        "height": 844
       },
       "1366": {
-       "taken_at": "2026-11-16T23:04:16Z",
+       "taken_at": "2026-11-18T00:59:28Z",
        "viewport": "1366x768",
        "console_errors_on_source": 0,
        "file": "/assets/shots/gabriel-dacruz-score-1366.webp",
-       "bytes": 39306,
+       "bytes": 39712,
        "width": 1366,
        "height": 768
       }
@@ -271,30 +296,30 @@
     {
      "label": "The Signal Chain",
      "path": "/d/signal/",
-     "version_at_capture": "v0.1.9",
+     "version_at_capture": "v0.1.13",
      "shots": {
       "390": {
-       "taken_at": "2026-11-16T23:04:24Z",
+       "taken_at": "2026-11-18T00:59:34Z",
        "viewport": "390x844",
        "console_errors_on_source": 0,
        "file": "/assets/shots/gabriel-dacruz-signal-390.webp",
-       "bytes": 19438,
+       "bytes": 19748,
        "width": 390,
        "height": 844
       },
       "1366": {
-       "taken_at": "2026-11-16T23:04:21Z",
+       "taken_at": "2026-11-18T00:59:32Z",
        "viewport": "1366x768",
        "console_errors_on_source": 0,
        "file": "/assets/shots/gabriel-dacruz-signal-1366.webp",
-       "bytes": 40944,
+       "bytes": 41094,
        "width": 1366,
        "height": 768
       }
      }
     }
    ],
-   "main_label": "The Studio"
+   "main_label": "Premiere"
   },
   {
    "id": "jose-bota",
