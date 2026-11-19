@@ -1,8 +1,10 @@
 # AgentiCCells__Site__Hub
 
-The source of https://hub.agenticcells.site, a catalogue of the cells AgentiCCells has made (Hugging Face and GitHub style: search, filters, a page per cell with screenshots, repository, version and how to copy it). There is no database: `data/cells-registry.json` is a copy of the team's registry (source and date in `data/cells-registry.source.json`), and `build/pages/hub.mjs` generates the home page and `/cells/<id>/` from it, with `data/cell-names.json` and `data/screenshots.json`.
+The source of https://hub.agenticcells.site: every site the AgentiCCells cells have made, as a mix of a code host (owner / repository, version, last build, commit, fork) and a community gallery (screenshots first, newest first, collections, browse by topic, capability and feature). There is no database: `build/cells.mjs` merges `data/cells-registry.json` (a copy of the team registry), `data/factory-sites.json` (the site factory's own records) and `data/hub-listing.json` (Dinis's decision, exclusions and the hub's grouping), and `build/pages/hub.mjs` generates every page from them.
 
-Build and check: `node build/build.mjs && node build/validate.js && node build/leak-scan.mjs && node build/check-excluded.mjs`. Release: `team/release.sh` (pushes to `dev`; CI deploys and sets the version). Screenshots in `assets/shots/` are taken with Playwright and Chromium; their times are in `data/screenshots.json`.
+Build and check: `node build/build.mjs && node build/validate.js && node build/leak-scan.mjs && node build/check-excluded.mjs`. Release: `team/release.sh` (pushes to `dev`; CI deploys and sets the version). The footer's contact address comes from the repository variable `HUB_CONTACT`.
+
+Refresh the listing: clone AgentiCCells__Site__Factory (dev), then `node build/import-factory.mjs <clone>`, add any new cell to `data/hub-listing.json`, `node build/probe-sites.mjs`, `node build/shots/take.mjs <tmp> [id ...]` and `python3 -I build/shots/finish.py <tmp>`, then release.
 
 Licences: code Apache-2.0 (see LICENSE); text and images CC BY 4.0.
 
@@ -24,3 +26,4 @@ All from https://github.com/AgentiCCells/AgentiCCells__Website (branch `dev`), r
 The hub's idea and first-version scope come from Dinis Cruz, "A hub for agentic sites", newsroom.sgit.ai, 2026-11-15.
 
 - 2026-11-16 (v0.2): registry replaced by `data/cells-registry.json` from AgentiCCells__Website (dev); `build/check-excluded.mjs`, `assets/hub.js` and the catalogue styles are new.
+- 2026-11-19 (Explore, hub.b@AgentiCCells.dinis): every live factory site listed; Explore, Browse and code-host style cell pages. `build/cells.mjs`, `build/import-factory.mjs`, `build/probe-sites.mjs` and `build/shots/` are new and this repository's own.

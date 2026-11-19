@@ -1,0 +1,26 @@
+{
+  "_about": "Public keys of the agents that work on this repository, public halves only. Commits are signed as git SSH signatures with each agent's signing key (sgit_bundle.sign). Its OpenSSH form: save sgit_bundle.sign to a file and run ssh-keygen -i -m PKCS8 -f <file>.",
+  "agents": [
+    {
+      "agent": "hub.b@AgentiCCells.dinis",
+      "session": "https://claude.ai/code/session_01Kw9UwAyhZUpFxFhs4wQhuP",
+      "status": "active",
+      "created": "2026-11-19 02:58 UTC",
+      "encryption_fingerprint": "sha256:3b0a729fc89f6509",
+      "signing_fingerprint": "sha256:bdbf0c5189de2f3a",
+      "sgit_bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAs6ywdzsMqn5HpaUAuS5N\nsSMU6za2/S2FFnmroIxwxBZj7wfkfIRcbdHppbLm4sCj0OHpVAYervr0tBzGbnBg\n7pFIcjiPwgczPq+LDpNkd6Ao/TIByzYdsWzRtaXGetVgcxBe69ZPdPUU2yHDrapU\nlPZscr/tI0Mwj84KtrtJT7HIBeYcloVnAwFg5Q8tpm76MtKd+NDJLeQLlBYCBKpl\n79ugdMx4bhpW4qZFXj2EAa9XBY4Fh7+sf/pArzHRTrwoWqx7uIYx1jtVps2LUQ2o\noRna4ePtW6SlQ2dq7t/tiRNB/7Zj6joGImvCTNjBqoq1iWN7uJDrDXaTu2x3hlAD\nJI7xJ7CbR/ivPLhVTnIKq4iMac4rvvwpK3YWyYDrc+w1p0xnSoVoDOHcpdxuuuRm\nLtYIht2nKACvejWjofkj8EhDIE9UP0VjhrxRP454mi1wx/7mZSN7nZVUbyCaymUK\nBvuSkZ3QAZY33O7NirdwZSDYcz7/LrTDG7FMBaHA0ia7T+P7/Ln72XFFNCsIwosG\nDrsaz80UCubw4AnDGqn5d9KbAs5sITAiArWQYD6ZCFXDVO3PKZo786evZHSIotGp\ni626J5oYJjd5orUm+BP0IN8Ls0Cn05mGK/jdIBGNTvfiNKh1LB8V+7FhTdUffTHQ\nBfBk63U5It2bafJdw0zeRd0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEuydXqAO0vzLOiuz9dP7jH2MgAQoe\nLhf3Yjxj/IE9nPdxMNK/ro8yRQGTJKPQqsq3ybJaW9N+uZiDtNrbvYXNtA==\n-----END PUBLIC KEY-----\n",
+        "label": "hub.b@AgentiCCells.dinis",
+        "fingerprint": "sha256:3b0a729fc89f6509",
+        "signing_fingerprint": "sha256:bdbf0c5189de2f3a"
+      }
+    },
+    {
+      "agent": "hub@AgentiCCells.dinis",
+      "status": "superseded",
+      "note": "The hub agent on the old account published no key in this repository and its commits are unsigned. Superseded by hub.b@AgentiCCells.dinis on 2026-11-19."
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 ---
 title: Find, copy or ask for a cell
 description: How to find a cell on the AgentiCCells hub, how to copy one, how to ask for one like it, and how a cell comes to be listed.
-nav: 2
+nav: 3
 navlabel: Find and copy
 ---
 # Find, copy or ask for a cell

@@ -1,132 +1,100 @@
 {
- "_about": "Screenshots taken with Playwright/Chromium by hub@AgentiCCells.dinis of each live address, top of the home page, one viewport each. Times are UTC. A screenshot is a snapshot: the live site may have changed since.",
+ "_about": "Screenshots taken with Playwright and Chromium by the hub agent of each live address, top of the home page, one viewport each (build/shots/take.mjs, then build/shots/finish.py). Times are UTC. A screenshot is a snapshot: the live site may have changed since.",
  "shots": [
   {
    "id": "agenticcells-ai",
    "source": "https://agenticcells.ai",
-   "version_at_capture": "v0.1.134",
+   "version_at_capture": "v0.1.269",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T18:08:11Z",
+     "taken_at": "2026-11-19T03:10:55Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
      "file": "/assets/shots/agenticcells-ai-390.webp",
-     "bytes": 25306,
+     "bytes": 50446,
      "width": 390,
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T18:08:09Z",
+     "taken_at": "2026-11-19T03:10:58Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/agenticcells-ai-1366.webp",
-     "bytes": 41878,
+     "bytes": 73590,
      "width": 1366,
      "height": 768
     }
    },
    "thumb": {
     "file": "/assets/shots/agenticcells-ai-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 27066,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+    "width": 720,
+    "height": 405,
+    "bytes": 27908,
+    "crop": "the whole 1366x768 screenshot, resized"
    }
   },
   {
    "id": "agenticcells-site",
    "source": "https://agenticcells.site",
-   "version_at_capture": "v0.1.4",
+   "version_at_capture": "v0.1.10",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T18:08:16Z",
+     "taken_at": "2026-11-19T03:10:54Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
      "file": "/assets/shots/agenticcells-site-390.webp",
-     "bytes": 27184,
+     "bytes": 30344,
      "width": 390,
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T18:08:13Z",
+     "taken_at": "2026-11-19T03:10:57Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/agenticcells-site-1366.webp",
-     "bytes": 40230,
+     "bytes": 45738,
      "width": 1366,
      "height": 768
     }
    },
    "thumb": {
     "file": "/assets/shots/agenticcells-site-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 20462,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+    "width": 720,
+    "height": 405,
+    "bytes": 18942,
+    "crop": "the whole 1366x768 screenshot, resized"
    }
   },
   {
-   "id": "hub",
-   "source": "https://hub.agenticcells.site",
+   "id": "algarve-holiday-homes",
+   "source": "https://algarve-holiday-homes.agenticcells.site",
    "version_at_capture": "v0.1.5",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T18:14:35Z",
+     "taken_at": "2026-11-19T03:11:30Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
-     "file": "/assets/shots/hub-390.webp",
-     "bytes": 26154,
+     "file": "/assets/shots/algarve-holiday-homes-390.webp",
+     "bytes": 42152,
      "width": 390,
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T18:14:32Z",
+     "taken_at": "2026-11-19T03:11:33Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
-     "file": "/assets/shots/hub-1366.webp",
-     "bytes": 64230,
+     "file": "/assets/shots/algarve-holiday-homes-1366.webp",
+     "bytes": 102094,
      "width": 1366,
      "height": 768
     }
    },
    "thumb": {
-    "file": "/assets/shots/hub-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 34520,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
-   }
-  },
-  {
-   "id": "riskmandate-at-websummit",
-   "source": "https://riskmandate-at-websummit.agenticcells.site",
-   "version_at_capture": "v0.1.5",
-   "shots": {
-    "390": {
-     "taken_at": "2026-11-16T18:08:48Z",
-     "viewport": "390x844",
-     "console_errors_on_source": 0,
-     "file": "/assets/shots/riskmandate-at-websummit-390.webp",
-     "bytes": 20990,
-     "width": 390,
-     "height": 844
-    },
-    "1366": {
-     "taken_at": "2026-11-16T18:08:39Z",
-     "viewport": "1366x768",
-     "console_errors_on_source": 0,
-     "file": "/assets/shots/riskmandate-at-websummit-1366.webp",
-     "bytes": 43680,
-     "width": 1366,
-     "height": 768
-    }
-   },
-   "thumb": {
-    "file": "/assets/shots/riskmandate-at-websummit-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 23830,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+    "file": "/assets/shots/algarve-holiday-homes-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 37964,
+    "crop": "the whole 1366x768 screenshot, resized"
    }
   },
   {
@@ -135,7 +103,7 @@
    "version_at_capture": "v0.1.4",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T18:08:54Z",
+     "taken_at": "2026-11-19T03:11:00Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
      "file": "/assets/shots/algarve-orange-grower-390.webp",
@@ -144,7 +112,7 @@
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T18:08:52Z",
+     "taken_at": "2026-11-19T03:11:03Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/algarve-orange-grower-1366.webp",
@@ -155,42 +123,394 @@
    },
    "thumb": {
     "file": "/assets/shots/algarve-orange-grower-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 69424,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+    "width": 720,
+    "height": 405,
+    "bytes": 50606,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "bulletins-promptugal-news",
+   "source": "https://bulletins.promptugal.news",
+   "version_at_capture": "v0.1.22",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:34Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/bulletins-promptugal-news-390.webp",
+     "bytes": 37772,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:37Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/bulletins-promptugal-news-1366.webp",
+     "bytes": 41556,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/bulletins-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 16432,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "cell-email",
+   "source": "https://email-cell.agenticcells.site",
+   "version_at_capture": "v0.1.38",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:11Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/cell-email-390.webp",
+     "bytes": 45426,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:14Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/cell-email-1366.webp",
+     "bytes": 56982,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/cell-email-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 22344,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "civic-promptugal-news",
+   "source": "https://civic.promptugal.news",
+   "version_at_capture": "v0.1.42",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:23Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/civic-promptugal-news-390.webp",
+     "bytes": 40104,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:27Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/civic-promptugal-news-1366.webp",
+     "bytes": 81160,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/civic-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 31342,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "cyber-demo",
+   "source": "https://cyber-demo.agenticcells.site",
+   "version_at_capture": "v0.1.1",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:35Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/cyber-demo-390.webp",
+     "bytes": 14272,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:37Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/cyber-demo-1366.webp",
+     "bytes": 15850,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/cyber-demo-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 5862,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "cyber-promptugal-news",
+   "source": "https://cyber.promptugal.news",
+   "version_at_capture": "v0.1.29",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:36Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/cyber-promptugal-news-390.webp",
+     "bytes": 45668,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:38Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/cyber-promptugal-news-1366.webp",
+     "bytes": 61826,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/cyber-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 23722,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "data-promptugal-news",
+   "source": "https://data.promptugal.news",
+   "version_at_capture": "v0.1.79",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:23Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/data-promptugal-news-390.webp",
+     "bytes": 31500,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:26Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/data-promptugal-news-1366.webp",
+     "bytes": 49000,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/data-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 20140,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "evals",
+   "source": "https://evals.agenticcells.site",
+   "version_at_capture": "v0.1.5",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:35Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/evals-390.webp",
+     "bytes": 32030,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:38Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/evals-1366.webp",
+     "bytes": 49770,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/evals-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 19722,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "events-demo",
+   "source": "https://events-demo.agenticcells.site",
+   "version_at_capture": "v0.1.1",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:39Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/events-demo-390.webp",
+     "bytes": 14932,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:42Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/events-demo-1366.webp",
+     "bytes": 16512,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/events-demo-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 6136,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "events-promptugal-news",
+   "source": "https://events.promptugal.news",
+   "version_at_capture": "v0.1.32",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:42Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/events-promptugal-news-390.webp",
+     "bytes": 44848,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:46Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/events-promptugal-news-1366.webp",
+     "bytes": 68822,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/events-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 25586,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "factory-qa-1",
+   "source": "https://qa-1.agenticcells.site",
+   "version_at_capture": "v0.1.2",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:06Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/factory-qa-1-390.webp",
+     "bytes": 11224,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:08Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/factory-qa-1-1366.webp",
+     "bytes": 12750,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/factory-qa-1-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 4684,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "factory-qa-2",
+   "source": "https://qa-2.agenticcells.site",
+   "version_at_capture": "v0.1.2",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:11Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/factory-qa-2-390.webp",
+     "bytes": 33304,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:13Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/factory-qa-2-1366.webp",
+     "bytes": 40766,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/factory-qa-2-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 16206,
+    "crop": "the whole 1366x768 screenshot, resized"
    }
   },
   {
    "id": "gabriel-dacruz",
    "source": "https://gabriel-dacruz.agenticcells.site",
-   "version_at_capture": "v0.1.13",
+   "version_at_capture": "v0.1.21",
    "shots": {
     "390": {
-     "taken_at": "2026-11-18T00:59:10Z",
+     "taken_at": "2026-11-19T03:11:01Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
      "file": "/assets/shots/gabriel-dacruz-390.webp",
-     "bytes": 23288,
+     "bytes": 24084,
      "width": 390,
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-18T00:59:08Z",
+     "taken_at": "2026-11-19T03:11:04Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/gabriel-dacruz-1366.webp",
-     "bytes": 36692,
+     "bytes": 40758,
      "width": 1366,
      "height": 768
     }
    },
    "thumb": {
     "file": "/assets/shots/gabriel-dacruz-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 17726,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+    "width": 720,
+    "height": 405,
+    "bytes": 17256,
+    "crop": "the whole 1366x768 screenshot, resized"
    },
    "more": [
     {
@@ -322,108 +642,428 @@
    "main_label": "Premiere"
   },
   {
-   "id": "jose-bota",
-   "source": "https://jose-bota.agenticcells.site",
-   "version_at_capture": "v0.1.3",
+   "id": "hub",
+   "source": "https://hub.agenticcells.site",
+   "version_at_capture": "v0.1.17",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T22:50:34Z",
+     "taken_at": "2026-11-19T03:10:55Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
-     "file": "/assets/shots/jose-bota-390.webp",
-     "bytes": 27856,
+     "file": "/assets/shots/hub-390.webp",
+     "bytes": 26896,
      "width": 390,
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T22:50:32Z",
+     "taken_at": "2026-11-19T03:10:57Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/hub-1366.webp",
+     "bytes": 69686,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/hub-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 27054,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "indi-gupte",
+   "source": "https://indi-gupte.agenticcells.site",
+   "version_at_capture": "v0.1.17",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:41Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/indi-gupte-390.webp",
+     "bytes": 38390,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:44Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/indi-gupte-1366.webp",
+     "bytes": 58152,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/indi-gupte-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 24444,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "ipma-data",
+   "source": "https://ipma-data.agenticcells.site",
+   "version_at_capture": "v0.1.5",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:42Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/ipma-data-390.webp",
+     "bytes": 35666,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:45Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/ipma-data-1366.webp",
+     "bytes": 66814,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/ipma-data-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 24332,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "jose-bota",
+   "source": "https://jose-bota.agenticcells.site",
+   "version_at_capture": "v0.1.24",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:00Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/jose-bota-390.webp",
+     "bytes": 28054,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:03Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/jose-bota-1366.webp",
-     "bytes": 46342,
+     "bytes": 51390,
      "width": 1366,
      "height": 768
     }
    },
    "thumb": {
     "file": "/assets/shots/jose-bota-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 27662,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+    "width": 720,
+    "height": 405,
+    "bytes": 20576,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "library-promptugal-news",
+   "source": "https://library.promptugal.news",
+   "version_at_capture": "v0.1.29",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:45Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/library-promptugal-news-390.webp",
+     "bytes": 34354,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:48Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/library-promptugal-news-1366.webp",
+     "bytes": 45004,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/library-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 17972,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "live-promptugal-news",
+   "source": "https://live.promptugal.news",
+   "version_at_capture": "v0.1.26",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:49Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/live-promptugal-news-390.webp",
+     "bytes": 36178,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:52Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/live-promptugal-news-1366.webp",
+     "bytes": 49152,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/live-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 19116,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "london-billboard",
+   "source": "https://london-billboard.agenticcells.site",
+   "version_at_capture": "v0.1.4",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:49Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/london-billboard-390.webp",
+     "bytes": 34914,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:51Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/london-billboard-1366.webp",
+     "bytes": 57634,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/london-billboard-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 21412,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "marc-noah",
+   "source": "https://marc-noah.agenticcells.site",
+   "version_at_capture": "v0.1.34",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:22Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/marc-noah-390.webp",
+     "bytes": 22764,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:25Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/marc-noah-1366.webp",
+     "bytes": 48672,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/marc-noah-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 17568,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "mondweep-chakravorty",
+   "source": "https://mondweep-chakravorty.agenticcells.site",
+   "version_at_capture": "v0.1.19",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:49Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/mondweep-chakravorty-390.webp",
+     "bytes": 35040,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:51Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/mondweep-chakravorty-1366.webp",
+     "bytes": 57438,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/mondweep-chakravorty-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 23850,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "openrouter-evals",
+   "source": "https://openrouter-evals.agenticcells.site",
+   "version_at_capture": "v0.1.1",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:50Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/openrouter-evals-390.webp",
+     "bytes": 15382,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:52Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/openrouter-evals-1366.webp",
+     "bytes": 16896,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/openrouter-evals-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 6326,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "riskmandate-at-websummit",
+   "source": "https://riskmandate-at-websummit.agenticcells.site",
+   "version_at_capture": "v0.1.6",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:03Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/riskmandate-at-websummit-390.webp",
+     "bytes": 20838,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:13Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/riskmandate-at-websummit-1366.webp",
+     "bytes": 43338,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/riskmandate-at-websummit-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 19070,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "signals-promptugal-news",
+   "source": "https://signals.promptugal.news",
+   "version_at_capture": "v0.1.23",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:56Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/signals-promptugal-news-390.webp",
+     "bytes": 34104,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:59Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/signals-promptugal-news-1366.webp",
+     "bytes": 52164,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/signals-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 19522,
+    "crop": "the whole 1366x768 screenshot, resized"
    }
   },
   {
    "id": "silvio-switha",
    "source": "https://silvio-switha.agenticcells.site",
-   "version_at_capture": "v0.1.4",
+   "version_at_capture": "v0.1.5",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T22:50:40Z",
+     "taken_at": "2026-11-19T03:11:06Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
      "file": "/assets/shots/silvio-switha-390.webp",
-     "bytes": 39048,
+     "bytes": 38838,
      "width": 390,
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T22:50:37Z",
+     "taken_at": "2026-11-19T03:11:09Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/silvio-switha-1366.webp",
-     "bytes": 69792,
+     "bytes": 69488,
      "width": 1366,
      "height": 768
     }
    },
    "thumb": {
     "file": "/assets/shots/silvio-switha-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 35326,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
-   }
-  },
-  {
-   "id": "yiheng-wang",
-   "source": "https://yiheng-wang.agenticcells.site",
-   "version_at_capture": "v0.1.8",
-   "shots": {
-    "390": {
-     "taken_at": "2026-11-16T22:50:45Z",
-     "viewport": "390x844",
-     "console_errors_on_source": 0,
-     "file": "/assets/shots/yiheng-wang-390.webp",
-     "bytes": 30660,
-     "width": 390,
-     "height": 844
-    },
-    "1366": {
-     "taken_at": "2026-11-16T22:50:43Z",
-     "viewport": "1366x768",
-     "console_errors_on_source": 0,
-     "file": "/assets/shots/yiheng-wang-1366.webp",
-     "bytes": 56520,
-     "width": 1366,
-     "height": 768
-    }
-   },
-   "thumb": {
-    "file": "/assets/shots/yiheng-wang-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 26954,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+    "width": 720,
+    "height": 405,
+    "bytes": 28696,
+    "crop": "the whole 1366x768 screenshot, resized"
    }
   },
   {
    "id": "specialist-agent-behaviour-policies",
    "source": "https://specialist-abp.agenticcells.site",
-   "version_at_capture": "v0.1.6",
+   "version_at_capture": "v0.1.8",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T22:50:50Z",
+     "taken_at": "2026-11-19T03:11:12Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
      "file": "/assets/shots/specialist-agent-behaviour-policies-390.webp",
@@ -432,7 +1072,7 @@
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T22:50:48Z",
+     "taken_at": "2026-11-19T03:11:14Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/specialist-agent-behaviour-policies-1366.webp",
@@ -443,115 +1083,19 @@
    },
    "thumb": {
     "file": "/assets/shots/specialist-agent-behaviour-policies-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 30044,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
-   }
-  },
-  {
-   "id": "specialist-design",
-   "source": "https://specialist-design.agenticcells.site",
-   "version_at_capture": "v0.1.7",
-   "shots": {
-    "390": {
-     "taken_at": "2026-11-16T22:50:55Z",
-     "viewport": "390x844",
-     "console_errors_on_source": 0,
-     "file": "/assets/shots/specialist-design-390.webp",
-     "bytes": 39494,
-     "width": 390,
-     "height": 844
-    },
-    "1366": {
-     "taken_at": "2026-11-16T22:50:53Z",
-     "viewport": "1366x768",
-     "console_errors_on_source": 0,
-     "file": "/assets/shots/specialist-design-1366.webp",
-     "bytes": 50446,
-     "width": 1366,
-     "height": 768
-    }
-   },
-   "thumb": {
-    "file": "/assets/shots/specialist-design-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 32198,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
-   }
-  },
-  {
-   "id": "specialist-writing",
-   "source": "https://specialist-writing.agenticcells.site",
-   "version_at_capture": "v0.1.8",
-   "shots": {
-    "390": {
-     "taken_at": "2026-11-16T22:50:59Z",
-     "viewport": "390x844",
-     "console_errors_on_source": 0,
-     "file": "/assets/shots/specialist-writing-390.webp",
-     "bytes": 41442,
-     "width": 390,
-     "height": 844
-    },
-    "1366": {
-     "taken_at": "2026-11-16T22:50:57Z",
-     "viewport": "1366x768",
-     "console_errors_on_source": 0,
-     "file": "/assets/shots/specialist-writing-1366.webp",
-     "bytes": 49608,
-     "width": 1366,
-     "height": 768
-    }
-   },
-   "thumb": {
-    "file": "/assets/shots/specialist-writing-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 29502,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
-   }
-  },
-  {
-   "id": "specialist-security",
-   "source": "https://specialist-security.agenticcells.site",
-   "version_at_capture": "v0.1.2",
-   "shots": {
-    "390": {
-     "taken_at": "2026-11-16T22:51:03Z",
-     "viewport": "390x844",
-     "console_errors_on_source": 0,
-     "file": "/assets/shots/specialist-security-390.webp",
-     "bytes": 38910,
-     "width": 390,
-     "height": 844
-    },
-    "1366": {
-     "taken_at": "2026-11-16T22:51:01Z",
-     "viewport": "1366x768",
-     "console_errors_on_source": 0,
-     "file": "/assets/shots/specialist-security-1366.webp",
-     "bytes": 50864,
-     "width": 1366,
-     "height": 768
-    }
-   },
-   "thumb": {
-    "file": "/assets/shots/specialist-security-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 29694,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+    "width": 720,
+    "height": 405,
+    "bytes": 22300,
+    "crop": "the whole 1366x768 screenshot, resized"
    }
   },
   {
    "id": "specialist-code",
    "source": "https://specialist-code.agenticcells.site",
-   "version_at_capture": "v0.1.7",
+   "version_at_capture": "v0.1.8",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T22:51:08Z",
+     "taken_at": "2026-11-19T03:11:17Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
      "file": "/assets/shots/specialist-code-390.webp",
@@ -560,7 +1104,7 @@
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T22:51:06Z",
+     "taken_at": "2026-11-19T03:11:19Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/specialist-code-1366.webp",
@@ -571,19 +1115,83 @@
    },
    "thumb": {
     "file": "/assets/shots/specialist-code-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 31662,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+    "width": 720,
+    "height": 405,
+    "bytes": 19866,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "specialist-design",
+   "source": "https://specialist-design.agenticcells.site",
+   "version_at_capture": "v0.1.8",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:15Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-design-390.webp",
+     "bytes": 39494,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:18Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-design-1366.webp",
+     "bytes": 50446,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/specialist-design-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 19782,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "specialist-security",
+   "source": "https://specialist-security.agenticcells.site",
+   "version_at_capture": "v0.1.3",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:16Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-security-390.webp",
+     "bytes": 37076,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:19Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-security-1366.webp",
+     "bytes": 52526,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/specialist-security-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 20190,
+    "crop": "the whole 1366x768 screenshot, resized"
    }
   },
   {
    "id": "specialist-ux",
    "source": "https://specialist-ux.agenticcells.site",
-   "version_at_capture": "v0.1.5",
+   "version_at_capture": "v0.1.6",
    "shots": {
     "390": {
-     "taken_at": "2026-11-16T22:51:12Z",
+     "taken_at": "2026-11-19T03:11:20Z",
      "viewport": "390x844",
      "console_errors_on_source": 0,
      "file": "/assets/shots/specialist-ux-390.webp",
@@ -592,7 +1200,7 @@
      "height": 844
     },
     "1366": {
-     "taken_at": "2026-11-16T22:51:10Z",
+     "taken_at": "2026-11-19T03:11:22Z",
      "viewport": "1366x768",
      "console_errors_on_source": 0,
      "file": "/assets/shots/specialist-ux-1366.webp",
@@ -603,10 +1211,266 @@
    },
    "thumb": {
     "file": "/assets/shots/specialist-ux-thumb.webp",
-    "width": 1100,
-    "height": 480,
-    "bytes": 27248,
-    "crop": "top 1100x480 of the 1366 px screenshot, from x=133"
+    "width": 720,
+    "height": 405,
+    "bytes": 15308,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "specialist-writing",
+   "source": "https://specialist-writing.agenticcells.site",
+   "version_at_capture": "v0.1.13",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:16Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-writing-390.webp",
+     "bytes": 41442,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:18Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/specialist-writing-1366.webp",
+     "bytes": 49608,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/specialist-writing-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 19358,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "startups-promptugal-news",
+   "source": "https://startups.promptugal.news",
+   "version_at_capture": "v0.1.34",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:27Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/startups-promptugal-news-390.webp",
+     "bytes": 32526,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:31Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/startups-promptugal-news-1366.webp",
+     "bytes": 55730,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/startups-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 22008,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "sustain-nobility",
+   "source": "https://sustain-nobility.agenticcells.site",
+   "version_at_capture": "v0.1.26",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:55Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/sustain-nobility-390.webp",
+     "bytes": 42200,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:57Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/sustain-nobility-1366.webp",
+     "bytes": 73168,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/sustain-nobility-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 31084,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "travel-promptugal-news",
+   "source": "https://travel.promptugal.news",
+   "version_at_capture": "v0.1.49",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:29Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/travel-promptugal-news-390.webp",
+     "bytes": 35714,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:32Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/travel-promptugal-news-1366.webp",
+     "bytes": 70038,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/travel-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 27842,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "videos-promptugal-news",
+   "source": "https://videos.promptugal.news",
+   "version_at_capture": "v0.1.20",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:55Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/videos-promptugal-news-390.webp",
+     "bytes": 43890,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:57Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/videos-promptugal-news-1366.webp",
+     "bytes": 60224,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/videos-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 24122,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "weather-demo",
+   "source": "https://weather-demo.agenticcells.site",
+   "version_at_capture": "v0.1.8",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:57Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/weather-demo-390.webp",
+     "bytes": 37114,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:59Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/weather-demo-1366.webp",
+     "bytes": 48166,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/weather-demo-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 18006,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "weather-promptugal-news",
+   "source": "https://weather.promptugal.news",
+   "version_at_capture": "v0.1.40",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:29Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/weather-promptugal-news-390.webp",
+     "bytes": 40064,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:32Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/weather-promptugal-news-1366.webp",
+     "bytes": 58822,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/weather-promptugal-news-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 22802,
+    "crop": "the whole 1366x768 screenshot, resized"
+   }
+  },
+  {
+   "id": "yiheng-wang",
+   "source": "https://yiheng-wang.agenticcells.site",
+   "version_at_capture": "v0.1.22",
+   "shots": {
+    "390": {
+     "taken_at": "2026-11-19T03:11:06Z",
+     "viewport": "390x844",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/yiheng-wang-390.webp",
+     "bytes": 32328,
+     "width": 390,
+     "height": 844
+    },
+    "1366": {
+     "taken_at": "2026-11-19T03:11:09Z",
+     "viewport": "1366x768",
+     "console_errors_on_source": 0,
+     "file": "/assets/shots/yiheng-wang-1366.webp",
+     "bytes": 57186,
+     "width": 1366,
+     "height": 768
+    }
+   },
+   "thumb": {
+    "file": "/assets/shots/yiheng-wang-thumb.webp",
+    "width": 720,
+    "height": 405,
+    "bytes": 24202,
+    "crop": "the whole 1366x768 screenshot, resized"
    }
   }
  ]

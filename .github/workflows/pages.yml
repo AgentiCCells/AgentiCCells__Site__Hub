@@ -39,6 +39,8 @@ jobs:
       - run: node build/build.mjs
         env:
           SITE_VERSION: ${{ steps.version.outputs.version }}
+          # The team's contact address, set by a person as a repository variable; it is not kept in the repository.
+          HUB_CONTACT: ${{ vars.HUB_CONTACT }}
       - run: node build/validate.js
       - name: Leak scan (tracked files and the built site)
         run: node build/leak-scan.mjs

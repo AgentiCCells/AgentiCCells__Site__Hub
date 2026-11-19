@@ -1,72 +1,49 @@
-# REALITY.md: what is true of this repository, 2026-11-16
+# REALITY.md: what is true of this repository, 2026-11-19
 
-A thing not written here does not exist.
+A thing not written here does not exist. Kept by hub.b@AgentiCCells.dinis from 2026-11-19; earlier entries were written by hub@AgentiCCells.dinis on the old account (it left no hand-over here).
 
-## What the hub is
+## What the hub is (Explore, 2026-11-19)
 
-- A catalogue of the cells AgentiCCells has made, built from `data/cells-registry.json`: a copy of conductor@'s registry in AgentiCCells__Website (branch dev), copied 2026-11-16, registry checked 2026-11-16 18:10 UTC. Source and date: `data/cells-registry.source.json`. The copy is verbatim (refreshed 2026-11-16 after conductor@ removed the excluded cell's name from the registry).
-- Home page (v0.1.14): cards for the 15 cells with a live address and screenshot (riskmandate, orange grower, Gabriel DaCruz, company site, agenticcells.site, hub first, then the three new personal sites and the six specialist sites); then compact rows for parts (site factory, site template) and for the one proposed cell (email); the two factory test runs sit in a closed "Parts and tests" section that opens when a search or filter matches. Search, and filters (behind a Filters button on a phone) by kind, status and address. Thumbnails are a crop of the top 1100 x 480 px of each 1366 px screenshot.
-- Statuses are the registry's: live, demo, proposed, test (meanings in its _statuses field). Only proposed and test are not called Demo.
-- Versions on cards and pages are read from each live address's own /version.json when the hub is built (date shown on the cell page); the registry value is the fallback. A version is only as fresh as the last release of the hub: nothing rebuilds it on a schedule. The filters need `assets/hub.js`, which is this site's own plain script; without it every card still shows.
-- A page per cell at `/cells/<id>/`: what it does, kind, status, live address, repository, version, licence pointer, how to find it, how to copy it, and how to ask for one like it through https://agenticcells.ai.
-- Every cell is marked Demo unless the registry says its status is live. On the copy, only the company site, agenticcells.ai, says live.
-- No prices anywhere. Consultancy and the four ways to start are linked to https://agenticcells.ai, not described here.
-- Versions are the registry's `version_seen`, dated. They are not live readings.
-- Names shown are the hub's own choice, in `data/cell-names.json`; the registry holds none.
+On Dinis's word in the hub.b session (2026-11-19 ~03:05 UTC): "Ok, can you make sure that all sites (apart from sites that I explicit say should not be there, like [the excluded client cell]) are on the hub? Also can you make it a mix of GitHub/GitLab and community driven sites like HuggingFace or MidJourney", then "Basically this is the site I should be able to go to see the latest ACC.site sites, or by topic, feature or capability".
 
-## Five ways to make a cell yours (from Dinis's article "Fork it", 2026-11-16)
-
-- Every cell page shows five rows. Fork on GitHub (the standard `<repository>/fork` link) and Ask us (https://agenticcells.ai/website-cell/) are links. I could not test the fork link from here (github.com refused unauthenticated requests through the proxy), so it is the standard GitHub address, not a checked one; it works for public repositories only.
-- Deploy in one click, Run in your assistant and Take it as a vault are marked Planned on every page. No such button or download exists, and the validator fails the build if a deploy service is named on a cell page or a page does not mark exactly three as planned.
-- Paths (start here, then fork that, then add this cell) are planned, not built: only a Paths paragraph on /publish/ says so.
-- The cells are not fork-ready for strangers yet (the article says so of the site template); each fork row says to expect changes.
-
-## Name and mark (v0.1.9)
-
-- On a relayed, cut-off message from Dinis ("the logo should be ACC with ...", relayed by cells@, 2026-11-16 ~21:30 UTC) the header mark is now "ACC" in a teal rounded box (also the favicon) and the name reads "AgentiCCells.site" with "hub" as a label. This is my reading of a truncated sentence: it needs Dinis's confirmation. No design specialist input had reached this session when it was made; the wider look of the hub is unchanged.
-
-## Design review applied (v0.1.10)
-
-specialist-design@ reviewed v0.1.8 (relayed 2026-11-16 ~21:30 UTC; a proposal, not an instruction). Applied: search and filters on one row from 44 rem, Filters button only below that; card title first with a muted "Kind · Status" line; Live as a filled accent pill; intro capped at the text measure; screenshot edge line; dimmed screenshots in dark mode; the repeated sentence dropped from the Proposed rows. Not applied: the arc-style mark (it resembles the Creative Commons symbol; waits for Dinis's answer, so the header keeps the plain letters ACC in a square tile), phone cards as rows, footer contact.
-- The registry still lists the design and UX specialists as proposed; the review says they are live sites now. The registry is conductor@'s to update.
-
-## Wordmark and mark (v0.1.13)
-
-- Wordmark: "hub.AgentiCCells.site", "hub." regular and muted, the rest bold (Dinis's choice B, "I like", relayed by cells@, ~21:38 UTC).
-- Mark: an A and two open arcs ("ACC with today's arcs", option 2 by specialist-design@, CC BY 4.0), as header mark and favicon. The Creative Commons trademark question (researcher@ S4, designer@ D7) had no answer until cells@ asked Dinis, ~22:45 UTC, "Ship the mark now (you accept the risk, or judge that the A and the arcs keep it clearly apart from the Creative Commons logo), or ship the wordmark only for now?" and relayed his answer: "yes and also continue with the hub work". The question offered two choices, so "yes" is ambiguous; cells@ and I read it as yes to shipping the mark. Dinis has not been asked directly by me. If he meant the wordmark only, the previous header (plain letters ACC in a square tile) is in the v0.1.11 commit and can be restored.
-
-## Gabriel DaCruz entry (v0.1.12)
-
-On a request from site@AgentiCCells.gabriel-dacruz (Dinis's go, relayed by cells@, 2026-11-16 ~21:40 UTC): name "Gabriel DaCruz"; the longer description is in `data/cell-text.json` (it replaces the registry's short line on the hub; the registry copy stays verbatim, so conductor@'s registry still holds the old line). Screenshots of three designs (The Studio at /, The Score at /d/score/, The Signal Chain at /d/signal/) at 1366 and 390 px, taken 2026-11-16 ~22:45 UTC when the live site was v0.1.6, replace the older home-page shots. I could not read the repository's hub.json (github.com is refused from here, and the live site serves none at /hub.json); the text is as the site's agent gave it. No audience numbers.
-
-## Registry refresh (v0.1.14)
-
-Copy now pinned to commit 12afa0c of AgentiCCells__Website (the dev address still served the old 17-entry file): 20 entries. New: Yiheng Wang, Silvio Switha and José Bota personal sites, each with a consent line in the registry (Dinis, relayed by cells@, ~22:45 UTC; this hub did not check it). The six specialists are now demos with live addresses. Nine new cells have 1366 and 390 px screenshots taken 2026-11-16 ~22:55 UTC. Their live home pages were checked for the excluded client cell's name: none.
-
-## Gabriel DaCruz, five designs (v0.1.15)
-
-Updated on a request from site@AgentiCCells.gabriel-dacruz (~23:03 UTC, site v0.1.9, "at Dinis's word"): the new description and screenshots of all five designs (The Studio, The Sleeve, The Cue Sheet, The Score, The Signal Chain), taken by this hub at 1366 and 390 px from the live pages, not copied from the site's own thumbnails. The screenshots show Gabriel's own photos; they are used only in his entry and nowhere else on the hub (the card thumbnail is his entry). No audience numbers.
-
-## Link previews (v0.1.16)
-
-On Dinis's word relayed by cells@ (2026-11-17 ~18:10 UTC, "yes do the link-preview roll out"). Every page has canonical, Open Graph (type, site name, locale en_GB, url, title, description of 110 to 150 characters, image with type, 1200, 630 and alt) and Twitter card (summary_large_image with title, description, image, alt), all absolute https. The home page, /publish/ and 404 use `assets/og/home.jpg` (the ACC mark and "hub.AgentiCCells.site", from `build/og/home.html`). Each cell page with a screenshot uses `assets/og/<id>.jpg`, the top of its 1366 px screenshot resized to 1200x630 (made by `build/og/make-og.py`, all under 100 KB except the orange grower at about 160 KB); the cells without a screenshot use the home image. The validator fails a page missing any of these tags, with a description outside 110 to 150 characters, or with an og:image that is not an absolute https .jpg in the built site, not 1200x630, or over 300 KB; tested five ways (missing tag, oversize, relative address, missing file, missing twitter:card), each failed as it should. I could not read the commit this was modelled on (16fb163 in the Gabriel site's repository; github.com is refused from here), so the approach follows the written brief, not that commit.
-
-## Gabriel DaCruz, six designs (v0.1.17)
-
-Updated 2026-11-18 ~01:00 UTC on a request from site@AgentiCCells.gabriel-dacruz ("at Dinis's word", site v0.1.13): the new description (concert, film and television; Premiere as the home design) and screenshots of the six designs (Premiere, The Studio, The Sleeve, The Cue Sheet, The Score, The Signal Chain), taken by this hub at 1366 and 390 px from the live pages, not the site's own images. The photos and video stills are Gabriel's own, used only in his entry (screenshots, card thumbnail, link-preview image). No audience numbers.
+- **44 cells** are listed: the 20 entries of the registry copy and 24 sites from the site factory's records. 42 have a live address; all 42 answered on 2026-11-19 ~03:10 UTC.
+- **Where the list comes from** (`build/cells.mjs`, no database):
+  - `data/cells-registry.json`: verbatim copy of conductor@'s registry (AgentiCCells__Website commit 12afa0c, copied 2026-11-16). Its keeper, conductor@ on the old account, is gone, and the registry file on that repository's dev branch has unresolved merge-conflict markers (seen 2026-11-19 02:56 UTC). Who keeps it now is an open question for Dinis.
+  - `data/factory-sites.json`: the factory's own records, one entry per request (`requests/*/site.json` and `status.json` in AgentiCCells__Site__Factory), copied by `build/import-factory.mjs` from factory commit f6b4e0851b4a (2026-11-19 03:06 UTC). Every request that is live and public is listed. This is the hub's half of FAC-008; the factory does not yet publish a `sites.json`, so the copy is refreshed by running the script and releasing.
+  - `data/hub-listing.json`: Dinis's decision, the exclusions, which factory request is the same cell as a registry entry (the registry wins), three newer facts (the email cell and the two factory test runs now have live addresses), and the hub's grouping: collection, topics, capabilities.
+- **Excluded**: the one client cell Dinis excluded on 2026-11-16 (never listed, linked or named; `build/check-excluded.mjs` fails the build if it is); `vicky-wang`, withdrawn (Dinis deleted its repository and DNS; the address does not answer).
+- **Consent**: every factory request that names a person or a company records in its brief that they agreed, before it was filed (checked by hub.b on 2026-11-19 for marc-noah, indi-gupte, mondweep-chakravorty, sustain-nobility; the registry records it for jose-bota, silvio-switha, yiheng-wang).
+- **Explore** (home page): search; collections; a "Newest sites" strip (by the date the factory made them); a gallery of screenshots, latest update first; filters by collection, topic, capability, feature, owner and status (`assets/hub.js`; without it every card still shows, newest first); sort by latest update, newest site or name.
+- **Browse** pages that work without JavaScript: `/browse/`, `/collections/<c>/`, `/topics/<t>/`, `/capabilities/<k>/`, `/features/<f>/`.
+- **Cell pages** look like a code host: owner / repository, Open the site, Repository, Fork; an About panel with topics, capability, features, version, last build, commit and the factory request; screenshots; the five ways to make it yours; how to copy it.
+- **Latest update** is the `built` time in each live site's own `/version.json`, read when the hub is built. Nothing rebuilds the hub on a schedule, so it is as fresh as the last release.
+- **Topics and capabilities** are the hub's reading of each site's own description. **Features** are checked on each live home page by `build/probe-sites.mjs` (llms.txt, two or more designs under /d/, a Portuguese version, a link-preview image), stored with the time in `data/site-features.json`.
+- **First page only**: cyber-demo, events-demo and openrouter-evals still show the factory's first page (seen in the screenshots of 2026-11-19); their pages say so.
+- No stars, likes or download counts: the hub collects none, and the validator fails a cell page that shows one.
+- Statuses: every factory site is Demo; the registry's statuses stand for its entries. No prices anywhere.
 
 ## Screenshots
 
-- Fifteen cells have a live address (six at first, nine added in v0.1.14). Each has a desktop (1366 px) and a phone (390 px) screenshot of its home page, taken with Playwright and Chromium by hub@ on 2026-11-16 (the hub's own, retaken after v0.1.5 went live; times in `data/screenshots.json`), stored as WebP in `assets/shots/`.
-- Cells with no live address show a labelled placeholder, not a screenshot.
-- To retake: see `data/screenshots.json`; the capture was a viewport screenshot after the page finished loading.
+- All 42 live addresses were photographed on 2026-11-19 ~03:10 UTC at 1366x768 and 390x844 (`build/shots/take.mjs`, Playwright and Chromium), turned into WebP, a 720x405 card image and a 1200x630 link-preview image (`build/shots/finish.py`). Times and versions at capture are in `data/screenshots.json`. Gabriel DaCruz's five extra design screenshots from 2026-11-18 are kept.
+- Cells with no live address (site factory, site template) show a labelled placeholder.
 
-## The excluded client cell
+## Contact address
 
-Dinis excluded one client cell (2026-11-16). It is not in the registry and is never listed, linked or named by this hub. `build/check-excluded.mjs` fails the build, and so the release, if its subdomain or repository name appears in any file git knows about or in the built site; the pattern is built from parts and is not printed.  Earlier commits of this repository (before 2026-11-16 evening) mention it in `REALITY.md` and the activity log; history was not rewritten.
+- The footer's contact address is no longer in the repository: the build reads it from the repository variable `HUB_CONTACT` (set in GitHub, Settings, Secrets and variables, Actions, Variables). Until a person sets it, the footer says "Contact: through agenticcells.ai". Changed 2026-11-19 because the session's privacy check refuses to run a script that holds the account's address.
+
+## Signing
+
+- hub.b signs every commit as a git SSH signature with its own key (signing fingerprint sha256:bdbf0c5189de2f3a); the public bundle is in `team/keys.json`. Commits before 2026-11-19 are unsigned.
+
+## Five ways to make a cell yours (from Dinis's article "Fork it", 2026-11-16)
+
+- Fork on GitHub and Ask us are links; Deploy in one click, Run in your assistant and Take it as a vault are marked Planned on every page, and the validator fails a page that names a deploy service or does not mark exactly three as planned. The fork link is the standard GitHub address, not a checked one; it works for public repositories only.
+
+## Name and mark
+
+- Wordmark "hub.AgentiCCells.site" and the ACC mark with arcs, as decided 2026-11-16 (see git history of this file for the full record, including the open question on the mark).
 
 ## Deployment
 
-- https://hub.agenticcells.site serves from GitHub Pages via `.github/workflows/pages.yml`; every push to dev deploys it and CI sets the next v0.1.N.
-- Settings (Pages source, custom domain, environment) stay with Dinis. This session changed none of them.
-- The earlier consent records and the "coming" example were removed: the orange grower is now a registry entry marked demo and made-up.
+- https://hub.agenticcells.site serves from GitHub Pages via `.github/workflows/pages.yml`; every push to dev deploys it and CI sets the next v0.1.N. Settings (Pages source, custom domain, environment, variables) stay with Dinis.
+- Earlier commits of this repository (before 2026-11-16 evening) mention the excluded client cell in `REALITY.md` and the activity log; history was not rewritten.

@@ -1,0 +1,19 @@
+{
+  "agent": "hub.b@AgentiCCells.dinis",
+  "session": "https://claude.ai/code/session_01Kw9UwAyhZUpFxFhs4wQhuP",
+  "written": "2026-11-19 03:18 UTC (date -u)",
+  "state": "Explore released to dev on Dinis's word (2026-11-19 ~03:05 UTC): every site is listed except his exclusions, as a mix of a code host and a community gallery, browsable by latest, collection, topic, capability and feature.",
+  "listed": "44 cells: 20 from the registry copy of 2026-11-16 and 24 from the site factory's records (factory commit f6b4e0851b4a). 42 live addresses, all answering at 2026-11-19 ~03:10 UTC.",
+  "excluded": "The one client cell Dinis excluded (2026-11-16, never named) and vicky-wang (withdrawn: repository and DNS deleted by Dinis).",
+  "stale": [
+    "The registry in AgentiCCells__Website (dev) has unresolved merge-conflict markers and no keeper since conductor@ left. The hub still reads its copy of 2026-11-16 for 20 entries.",
+    "The factory records are a copy: a new factory site appears on the hub only when someone runs build/import-factory.mjs and releases, until the factory publishes its own sites.json (FAC-008).",
+    "Versions and last-build times are read when the hub is built; nothing rebuilds it on a schedule."
+  ],
+  "asks": [
+    "Dinis: who keeps the cells registry now, and should the hub become its keeper (data/hub-listing.json already holds the listing decisions)?",
+    "Dinis: FAC-008, factory half: may factory.b (or cells.b) add a sites.json to the factory's apply workflow, so new sites reach the hub without a copy?",
+    "Dinis: set the repository variable HUB_CONTACT to the team's contact address (Settings, Secrets and variables, Actions, Variables) if the footer should show it again; until then it points to agenticcells.ai.",
+    "Dinis: may the hub rebuild on a schedule (for example once a day) so versions and last-build times stay fresh? That needs a schedule line in .github/workflows/pages.yml."
+  ]
+}

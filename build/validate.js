@@ -101,38 +101,59 @@ for (const f of [...walk(join(root, 'content'), ['.md']), ...walk(join(root, 'si
   });
 }
 
-// Registry: the hub lists every entry of data/cells-registry.json (a verbatim copy, source and date in
-// data/cells-registry.source.json). Each gets a card and a page; every cell is a demo unless the registry says live.
+// Listing: the hub lists every cell build/cells.mjs returns (the registry copy, the factory's live public requests,
+// and data/hub-listing.json). Each gets a card on the home page and a page; every cell is a demo unless it says live.
 try {
-  const reg = JSON.parse(readFileSync(join(root, 'data/cells-registry.json'), 'utf8'));
   const src = JSON.parse(readFileSync(join(root, 'data/cells-registry.source.json'), 'utf8'));
   if (!isoDate.test(src.copied_on || '') || !/^https:\/\/raw\.githubusercontent\.com\//.test(src.copied_from || '')) fail('data/cells-registry.source.json: needs copied_from (raw.githubusercontent.com) and copied_on (a date)');
+  const factory = JSON.parse(readFileSync(join(root, 'data/factory-sites.json'), 'utf8'));
+  if (!/^https:\/\/github\.com\/AgentiCCells\/AgentiCCells__Site__Factory\/tree\/[0-9a-f]{7,12}\/requests$/.test(factory.copied_from || '')) fail('data/factory-sites.json: copied_from must name a factory commit');
+  const listing = JSON.parse(readFileSync(join(root, 'data/hub-listing.json'), 'utf8'));
+  const features = JSON.parse(readFileSync(join(root, 'data/site-features.json'), 'utf8'));
+  if (!/^\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC$/.test(features.checked_at || '')) fail('data/site-features.json: needs checked_at');
+  const { listedCells } = await import(new URL('./cells.mjs', import.meta.url).href);
+  const cells = listedCells(root);
   const shots = JSON.parse(readFileSync(join(root, 'data/screenshots.json'), 'utf8')).shots;
   const builtIndex = existsSync(join(root, 'site/index.html')) ? readFileSync(join(root, 'site/index.html'), 'utf8') : '';
   const kinds = new Set(['site', 'factory', 'template', 'cell', 'specialist', 'factory-test']);
   const ids = new Set();
-  const listed = reg.cells.filter((c) => c.listed === true);
-  if (!listed.length) fail('registry: no listed cells');
-  for (const c of listed) {
-    if (ids.has(c.id)) fail(`registry: duplicate id ${c.id}`);
+  if (!cells.length) fail('listing: no cells');
+  // Every live, public factory request is listed unless excluded or the same cell as a registry entry.
+  for (const r of factory.requests) {
+    if (r.state !== 'live' || r.visibility !== 'public' || listing.exclude[r.label]) continue;
+    const id = listing.same_as[r.label] || r.live.replace('https://', '').replace(/\.agenticcells\.site$/, '').replace(/\./g, '-');
+    if (!cells.some((c) => c.id === id)) fail(`listing: factory request ${r.request} is live but not listed`);
+  }
+  for (const label of Object.keys(listing.exclude).filter((k) => !k.startsWith('_'))) {
+    if (existsSync(join(root, 'site/cells', label))) fail(`listing: excluded ${label} has a page`);
+    const req = factory.requests.find((r) => r.label === label);
+    if (req && req.live && builtIndex.includes(req.live)) fail(`listing: excluded ${label} is on the home page`);
+  }
+  for (const c of cells) {
+    if (ids.has(c.id)) fail(`listing: duplicate id ${c.id}`);
     ids.add(c.id);
-    if (!kinds.has(c.kind)) fail(`registry: ${c.id} has unknown kind ${c.kind}`);
-    if (!/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+$/.test(c.repository || '')) fail(`registry: ${c.id} repository must be a github.com owner/repo address`);
-    if (c.live !== null && !/^https:\/\/[a-z0-9.-]+$/.test(c.live || '')) fail(`registry: ${c.id} live must be null or an https origin`);
+    if (!kinds.has(c.kind)) fail(`listing: ${c.id} has unknown kind ${c.kind}`);
+    if (!/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+$/.test(c.repository || '')) fail(`listing: ${c.id} repository must be a github.com owner/repo address`);
+    if (c.live && !/^https:\/\/[a-z0-9.-]+$/.test(c.live)) fail(`listing: ${c.id} live must be null or an https origin`);
     const pf = join(root, 'site/cells', c.id, 'index.html');
-    if (!existsSync(pf)) { fail(`registry: no built page for ${c.id}`); continue; }
+    if (!existsSync(pf)) { fail(`listing: no built page for ${c.id}`); continue; }
     const pg = readFileSync(pf, 'utf8');
     const want = { live: 'Live', demo: 'Demo', proposed: 'Proposed', test: 'Test' }[c.status];
-    if (!want) { fail(`registry: ${c.id} has unknown status ${c.status}`); continue; }
+    if (!want) { fail(`listing: ${c.id} has unknown status ${c.status}`); continue; }
     if (!new RegExp(`class="tag is-${c.status}">${want}</span>`).test(pg)) fail(`site/cells/${c.id}: must be marked ${want}`);
-    if (c.status !== 'demo' && /class="tag is-demo"/.test(pg)) fail(`site/cells/${c.id}: marked Demo but the registry says ${c.status}`);
-    if (c.status !== 'live' && /class="tag is-live">Live/.test(pg)) fail(`site/cells/${c.id}: marked live but the registry does not say live`);
+    if (c.status !== 'demo' && /class="tag is-demo"/.test(pg)) fail(`site/cells/${c.id}: marked Demo but its status is ${c.status}`);
+    if (c.status !== 'live' && /class="tag is-live">Live/.test(pg)) fail(`site/cells/${c.id}: marked live but its status is not live`);
+    if (c.seed && !/class="tag is-seed">First page only/.test(pg)) fail(`site/cells/${c.id}: must be marked First page only`);
     if (!builtIndex.includes(`href="/cells/${c.id}/"`)) fail(`site/index.html: no card for ${c.id}`);
+    for (const t of c.topics) if (!existsSync(join(root, 'site/topics', t, 'index.html'))) fail(`site/topics/${t}: missing`);
+    for (const k of c.capabilities) if (!existsSync(join(root, 'site/capabilities', k, 'index.html'))) fail(`site/capabilities/${k}: missing`);
     // Five ways to make it yours: a real fork link, the ask link, and the three unbuilt ways marked Planned (no invented deploy buttons).
     if (!pg.includes(`href="${c.repository}/fork"`)) fail(`site/cells/${c.id}: no fork link`);
     if (!pg.includes('href="https://agenticcells.ai/website-cell/"')) fail(`site/cells/${c.id}: no ask-us link`);
     if ((pg.match(/<span class="tag">Planned<\/span>/g) || []).length !== 3) fail(`site/cells/${c.id}: the three unbuilt ways must each be marked Planned`);
     if (/netlify|vercel|pages\.dev|deploy\.cloudflare/i.test(pg.replace(/Netlify, Vercel/g, ''))) fail(`site/cells/${c.id}: a deploy link or service is named that does not exist yet`);
+    // No invented popularity: the hub collects no stars, likes or downloads.
+    if (/\b\d+\s*(stars?|likes?|downloads?)\b/i.test(pg)) fail(`site/cells/${c.id}: shows a star, like or download count`);
     if (c.live) {
       const s = shots.find((x) => x.id === c.id);
       for (const w of ['1366', '390']) {
@@ -143,9 +164,10 @@ try {
       if (!pg.includes('<img ')) fail(`site/cells/${c.id}: has a live address but shows no screenshot`);
     }
   }
-  if (!/id="q"/.test(builtIndex) || !/id="kind"/.test(builtIndex)) fail('site/index.html: search and kind filter missing');
+  if (!/id="q"/.test(builtIndex) || !/id="facets"/.test(builtIndex) || !/id="sort"/.test(builtIndex)) fail('site/index.html: search, filters or sort missing');
   if (!/<script src="\/assets\/hub\.js" defer>/.test(builtIndex)) fail('site/index.html: hub.js not loaded');
-} catch (e) { fail(`registry: ${e.message}`); }
+  if (!existsSync(join(root, 'site/browse/index.html'))) fail('site/browse/index.html missing');
+} catch (e) { fail(`listing: ${e.message}`); }
 
 // The excluded client cell must not appear anywhere (separate script so its pattern stays out of this file).
 try {

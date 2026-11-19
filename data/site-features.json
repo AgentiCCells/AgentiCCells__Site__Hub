@@ -1,0 +1,300 @@
+{
+  "_about": "Features seen on each live home page by build/probe-sites.mjs (see the tests at the top of that file). A snapshot: the live site may have changed since.",
+  "checked_at": "2026-11-19 03:10 UTC",
+  "sites": {
+    "agenticcells-ai": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": true,
+      "og": true
+    },
+    "agenticcells-site": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "algarve-holiday-homes": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "algarve-orange-grower": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": true,
+      "og": false
+    },
+    "bulletins-promptugal-news": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "cell-email": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": false
+    },
+    "civic-promptugal-news": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "cyber-demo": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": false
+    },
+    "cyber-promptugal-news": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "data-promptugal-news": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": false
+    },
+    "evals": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "events-demo": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": false
+    },
+    "events-promptugal-news": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "factory-qa-1": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": false
+    },
+    "factory-qa-2": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": false
+    },
+    "gabriel-dacruz": {
+      "home": 200,
+      "llms": true,
+      "designs": 5,
+      "pt": true,
+      "og": true
+    },
+    "hub": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "indi-gupte": {
+      "home": 200,
+      "llms": true,
+      "designs": 4,
+      "pt": false,
+      "og": true
+    },
+    "ipma-data": {
+      "home": 200,
+      "llms": true,
+      "designs": 5,
+      "pt": false,
+      "og": true
+    },
+    "jose-bota": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "library-promptugal-news": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "live-promptugal-news": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "london-billboard": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "marc-noah": {
+      "home": 200,
+      "llms": true,
+      "designs": 5,
+      "pt": true,
+      "og": true
+    },
+    "mondweep-chakravorty": {
+      "home": 200,
+      "llms": true,
+      "designs": 4,
+      "pt": false,
+      "og": true
+    },
+    "openrouter-evals": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": false
+    },
+    "riskmandate-at-websummit": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "signals-promptugal-news": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "silvio-switha": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "specialist-agent-behaviour-policies": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "specialist-code": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "specialist-design": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "specialist-security": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "specialist-ux": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "specialist-writing": {
+      "home": 200,
+      "llms": false,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "startups-promptugal-news": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "sustain-nobility": {
+      "home": 200,
+      "llms": true,
+      "designs": 5,
+      "pt": false,
+      "og": true
+    },
+    "travel-promptugal-news": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": true,
+      "og": true
+    },
+    "videos-promptugal-news": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    },
+    "weather-demo": {
+      "home": 200,
+      "llms": true,
+      "designs": 5,
+      "pt": false,
+      "og": true
+    },
+    "weather-promptugal-news": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": true,
+      "og": false
+    },
+    "yiheng-wang": {
+      "home": 200,
+      "llms": true,
+      "designs": 0,
+      "pt": false,
+      "og": true
+    }
+  }
+}

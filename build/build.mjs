@@ -7,8 +7,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = join(root, 'site');
 // Set by CI only (see .github/workflows/pages.yml); local builds say 'local'.
 const version = process.env.SITE_VERSION || 'local';
-// Dinis, 2026-11-15: "The contact address for the team is going to be, for now, agent@riskmandate.ai".
-const contact = 'agent@riskmandate.ai';
+// The team's contact address (Dinis, 2026-11-15) is not kept in the repository: CI passes it from the
+// repository variable HUB_CONTACT (see .github/workflows/pages.yml). Without it the footer points to agenticcells.ai.
+const contact = /^[^\s@<>"]+@[^\s@<>"]+\.[a-z]{2,}$/i.test(process.env.HUB_CONTACT || '') ? process.env.HUB_CONTACT : '';
 
 // The site's address comes from CNAME, so a domain change needs no edit here.
 const origin = existsSync(join(root, 'CNAME')) ? `https://${readFileSync(join(root, 'CNAME'), 'utf8').trim()}` : '';
@@ -125,7 +126,7 @@ ${meta.noindex ? '<meta name="robots" content="noindex">\n' : ''}${origin && !me
 <main>
 ${content}
 </main>
-<footer><p>Contact: <a href="mailto:${contact}">${contact}</a></p><p>Code under Apache-2.0. Text and images under CC BY 4.0.</p><p>Consultancy and the four ways to start: <a href="https://agenticcells.ai">agenticcells.ai</a>. Also: <a href="https://agenticcells.site">agenticcells.site</a>.</p><p class="version">Version ${esc(version)}</p></footer>
+<footer><p>Contact: ${contact ? `<a href="mailto:${esc(contact)}">${esc(contact)}</a>` : 'through <a href="https://agenticcells.ai">agenticcells.ai</a>'}</p><p>Code under Apache-2.0. Text and images under CC BY 4.0.</p><p>Consultancy and the four ways to start: <a href="https://agenticcells.ai">agenticcells.ai</a>. Also: <a href="https://agenticcells.site">agenticcells.site</a>.</p><p class="version">Version ${esc(version)}</p></footer>
 ${meta.script ? `<script src="${esc(meta.script)}" defer></script>\n` : ''}</body>
 </html>
 `;
