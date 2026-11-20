@@ -25,9 +25,10 @@ const range = before ? [`${before}..${after}`] : [after];
 const added = lines(git('rev-list', '--no-merges', ...range));
 const descendants = new Set([first, ...lines(git('rev-list', '--ancestry-path', `${first}..${after}`))]);
 
-// A role may carry one account suffix after a dot (hub.b@, conductor.b@). Dinis Cruz, 2026-11-20, in the
-// hub.b session: "Yes we should be using dots". Nothing else about the shape is relaxed.
-const agentShape = /^[a-z0-9][a-z0-9-]*(?:\.[a-z0-9][a-z0-9-]*)?@agenticcells\.[a-z0-9][a-z0-9.-]*$/i;
+// A name is one or more parts separated by dots (hub.b@, conductor.web-summit.b@); a part may hold a hyphen
+// (web-summit). Dinis Cruz, 2026-11-20, in the hub.b session: "Yes we should be using dots", then "Yes they can
+// have more than one dot". Each part still starts with a letter or digit; nothing else about the shape is relaxed.
+const agentShape = /^[a-z0-9][a-z0-9-]*(?:\.[a-z0-9][a-z0-9-]*)*@agenticcells\.[a-z0-9][a-z0-9.-]*$/i;
 const errors = [];
 let checked = 0;
 for (const c of added) {
