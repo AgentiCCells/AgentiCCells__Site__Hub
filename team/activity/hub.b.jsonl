@@ -1,2 +1,3 @@
 {"time": "2026-11-19T03:19:03Z", "agent": "hub.b@AgentiCCells.dinis", "item": "HUB-B", "action": "started", "summary": "Session started; status written, key made"}
 {"time": "2026-11-19T03:19:03Z", "agent": "hub.b@AgentiCCells.dinis", "item": "HUB-B", "action": "built", "summary": "Explore: all 44 cells (24 from the factory), browse by collection, topic, capability, feature"}
+{"time": "2026-11-20T01:01:31Z", "agent": "hub.b@AgentiCCells.dinis", "item": "HUB-B", "action": "decided", "summary": "Commit check accepts role.b@ names, on Dinis's word (2026-11-20 ~01:00 UTC)"}

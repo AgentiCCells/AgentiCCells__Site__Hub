@@ -25,7 +25,9 @@ const range = before ? [`${before}..${after}`] : [after];
 const added = lines(git('rev-list', '--no-merges', ...range));
 const descendants = new Set([first, ...lines(git('rev-list', '--ancestry-path', `${first}..${after}`))]);
 
-const agentShape = /^[a-z0-9][a-z0-9-]*@agenticcells\.[a-z0-9][a-z0-9.-]*$/i;
+// A role may carry one account suffix after a dot (hub.b@, conductor.b@). Dinis Cruz, 2026-11-20, in the
+// hub.b session: "Yes we should be using dots". Nothing else about the shape is relaxed.
+const agentShape = /^[a-z0-9][a-z0-9-]*(?:\.[a-z0-9][a-z0-9-]*)?@agenticcells\.[a-z0-9][a-z0-9.-]*$/i;
 const errors = [];
 let checked = 0;
 for (const c of added) {
